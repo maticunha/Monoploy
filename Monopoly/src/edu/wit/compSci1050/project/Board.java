@@ -2,6 +2,7 @@ package edu.wit.compSci1050.project;
 
 public class Board {
 
+	//testing to push
 	String name;
 	int position;
 	int value; 
