@@ -6,9 +6,32 @@ public class Player {
 	
 	private int money;
 	
-	Player(String name,int money){
+	private int playerId;
+	
+	Player(String name,int money, int iD){
 		this.name = name;
 		this.money = money;
+		this.playerId = iD;
+		
+	}
+	
+	public String getName() {
+		return name;
+		
+	}
+	
+	public int getMoney() {
+		return money;
+		
+	}
+	
+	public int getPlayerId() {
+		return playerId;
+		
+	}
+	
+	public void setMoney(int amount) {
+		money += amount;
 		
 	}
 
