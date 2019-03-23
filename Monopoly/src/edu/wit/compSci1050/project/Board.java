@@ -1,5 +1,32 @@
 package edu.wit.compSci1050.project;
 
-public interface Board {
+public class Board {
 
+	String name;
+	int position;
+	int value; 
+	
+	public Board(String name, int position) {
+		this.name = name;
+		this.position = position;
+	}
+	
+	public String getName() {
+		return name;
+	}
+	
+	public int getPosition() {
+		return position;
+	}
+	
+	public void setPosition(int position) {
+		this.position = position;
+	}
+	
+	public int getValue() {
+		return value;
+	}
+	public void setValue(int n) {
+		value += n;
+	}
 }
