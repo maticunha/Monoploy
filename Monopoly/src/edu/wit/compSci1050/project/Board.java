@@ -7,9 +7,10 @@ public class Board {
 	int position;
 	int value; 
 	
-	public Board(String name, int position) {
+	public Board(String name, int position, int value) {
 		this.name = name;
 		this.position = position;
+		this.value = value;
 	}
 	
 	public String getName() {
