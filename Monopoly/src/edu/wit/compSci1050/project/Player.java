@@ -1,17 +1,15 @@
 package edu.wit.compSci1050.project;
 
-public class Player {
+public class Player extends Board {
+	String name;
+	int value;
+	int ID;
+	int position;
+
 	
-	private String name;
-	
-	private int money;
-	
-	private int playerId;
-	
-	Player(String name,int money, int iD){
-		this.name = name;
-		this.money = money;
-		this.playerId = iD;
+	Player(String name,int value, int ID, int position){
+		super(name, position, value);
+		this.ID = ID;
 		
 	}
 	
@@ -19,20 +17,13 @@ public class Player {
 		return name;
 		
 	}
+
 	
-	public int getMoney() {
-		return money;
+	public int getID() {
+		return ID;
 		
 	}
 	
-	public int getPlayerId() {
-		return playerId;
-		
-	}
 	
-	public void setMoney(int amount) {
-		money += amount;
-		
-	}
 
 }
