@@ -1,7 +1,7 @@
 package edu.wit.compSci1050.project;
 
-public abstract class Die {
+public interface Die {
 	
-	public abstract int rollDie();
+	public int rollDie();
 
 }

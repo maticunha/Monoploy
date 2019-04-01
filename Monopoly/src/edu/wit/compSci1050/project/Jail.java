@@ -2,10 +2,13 @@ package edu.wit.compSci1050.project;
 
 import java.util.Random;
 
-public class Jail {
+public class Jail extends Space {
 	
-	Jail(){
-		
+	
+
+	public Jail(String name, int position, int value) {
+		super(name, position, value);
+		// TODO Auto-generated constructor stub
 	}
 
 	public boolean tryRoll() {
