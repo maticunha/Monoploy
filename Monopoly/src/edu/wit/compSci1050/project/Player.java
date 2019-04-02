@@ -38,6 +38,10 @@ public class Player extends Board implements Die {
 		value += n;
 	}
 	
+	public void setValue(Player n, int v) {
+		n.setValue(v);
+	}
+	
 	public int nextPlayer() {
 		 return (getID() + 1) % 3 == 0? 1 : getID() + 1;
 	}
@@ -75,14 +79,30 @@ public class Player extends Board implements Die {
 				}
 			}
 			
-			if (boardObjects[position + 3].isObjectOf(Property)) {
+			if ((boardObjects[position + 3].isInstanceOf(Property))) {
+				if(boardObjects[position + 3].getOwnedBy == getID()) {
+					
+				}
+				
+				else if(boardObjects[position + 3].getOwnedBy  == 0) {
+					
+				} 
+				
+				else {
+					int owner = boardObjects[position + 3].getOwnedBy;
+					int value = boardObjects[position + 3].getValue;
+					
+					setValue((Player) boardObjects[getID()], -value);
+					setValue((Player) boardObjects[owner], value);
+					
+				}
 				
 			}
-			else if (boardObjects[position + 3].isObjectOf(Jail)) {
+			else if (boardObjects[position + 3].isInstanceOf(Jail)) {
 				
 			}
 			
-			else if (boardObjects[position + 3].isObjectOf(Event)) {
+			else if (boardObjects[position + 3].isInstanceOf(Event)) {
 				
 			}
 			
@@ -113,7 +133,6 @@ public class Player extends Board implements Die {
 			doTurn(getID());
 		}
 		else if (tryRoll) {
-			Random roll = new Random();	
 			int roll1 =  rollDie();
 			int roll2 = rollDie();
 				if (roll1 == roll2) {
