@@ -79,8 +79,8 @@ public class Player extends Board implements Die {
 				}
 			}
 			
-			if ((boardObjects[position + 3].isInstanceOf(Property))) {
-				if(boardObjects[position + 3].getOwnedBy == getID()) {
+			if (boardObjects[position + 3] instanceof  Property) {
+				if((Property) (boardObjects[position + 3].getOwnedBy) == getID()) {
 					
 				}
 				
@@ -98,11 +98,11 @@ public class Player extends Board implements Die {
 				}
 				
 			}
-			else if (boardObjects[position + 3].isInstanceOf(Jail)) {
+			else if (boardObjects[position + 3] instanceof Jail) {
 				
 			}
 			
-			else if (boardObjects[position + 3].isInstanceOf(Event)) {
+			else if (boardObjects[position + 3] instanceof Event) {
 				
 			}
 			
