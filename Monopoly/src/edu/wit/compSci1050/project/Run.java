@@ -26,8 +26,13 @@ public class Run extends Application implements Initializable {
 	ImageView Assembly; 
 	
 	@FXML
-	
 	ImageView CommunityChest;
+	
+	@FXML
+	ImageView CommunityChest2; 
+	
+	@FXML
+	ImageView CommunityChest3; 
 	
 	@FXML
 	ImageView Perl;
@@ -37,6 +42,15 @@ public class Run extends Application implements Initializable {
 	
 	@FXML
 	ImageView Question;
+	
+	@FXML
+	ImageView Question2; 
+	
+	@FXML
+	ImageView Question3;
+	
+	@FXML
+	ImageView Question4; 
 	
 	@FXML
 	ImageView HTML5; 

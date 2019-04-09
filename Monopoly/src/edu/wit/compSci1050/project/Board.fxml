@@ -76,7 +76,7 @@
       <VBox layoutX="147.0" layoutY="4.0" prefHeight="103.0" prefWidth="72.0" />
       <VBox layoutX="462.0" layoutY="4.0" prefHeight="103.0" prefWidth="79.0">
          <children>
-            <ImageView fitHeight="113.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="CommunityChest2" fitHeight="113.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Board%20Pictures/community-chest-vintage-monopoly-board-game-theme-card-design-turnpike.jpg" />
                </image>
@@ -84,7 +84,7 @@
          </children></VBox>
       <VBox layoutX="544.0" layoutY="-1.0" prefHeight="103.0" prefWidth="79.0">
          <children>
-            <ImageView fitHeight="173.0" fitWidth="138.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="Question3" fitHeight="173.0" fitWidth="138.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Board%20Pictures/chance%20card.jpg" />
                </image>
@@ -210,12 +210,12 @@
             <Image url="@Board%20Pictures/slide-14_chrome-logo-100748748-large.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="114.0" fitWidth="94.0" layoutX="898.0" layoutY="600.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+      <ImageView fx:id="CommunityChest3" fitHeight="114.0" fitWidth="94.0" layoutX="898.0" layoutY="600.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
          <image>
             <Image url="@Board%20Pictures/community-chest-vintage-monopoly-board-game-theme-card-design-turnpike.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="181.0" fitWidth="79.0" layoutX="875.0" layoutY="412.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+      <ImageView fx:id="Question4" fitHeight="181.0" fitWidth="79.0" layoutX="875.0" layoutY="412.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
          <image>
             <Image url="@Board%20Pictures/chance%20card.jpg" />
          </image>
@@ -292,7 +292,7 @@
             <Image url="@Board%20Pictures/chance%20card.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="176.0" fitWidth="75.0" layoutX="49.0" layoutY="421.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+      <ImageView fx:id="Question2" fitHeight="176.0" fitWidth="75.0" layoutX="49.0" layoutY="421.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
          <image>
             <Image url="@Board%20Pictures/chance%20card.jpg" />
          </image>
