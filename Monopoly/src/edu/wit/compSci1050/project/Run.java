@@ -198,6 +198,7 @@ public class Run extends Application implements Initializable {
 			
 			public void handle(ActionEvent event) {
 				//Enter dice rolling method here
+				//Calls dice rolling method
 			}
 		});
 		
