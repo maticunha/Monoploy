@@ -1,5 +1,5 @@
 package edu.wit.compSci1050.project;
-
+//comments
 public class Property implements Space {
 	int ownedBy;
 	String name;

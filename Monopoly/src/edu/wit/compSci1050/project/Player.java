@@ -1,7 +1,7 @@
 package edu.wit.compSci1050.project;
 import java.util.Random;
 
-//comments to push
+//comments 
 
 
 public class Player implements Die, Board {
