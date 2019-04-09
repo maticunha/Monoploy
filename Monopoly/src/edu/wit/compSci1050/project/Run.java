@@ -28,9 +28,10 @@ public class Run extends Application implements Initializable {
 	
 	
 	
-	
+	//This is where the text for the log is initialized. 
 	@FXML
 	TextField DiceResult; 
+	
 	
 	@FXML
 	Button Roll; 
