@@ -21,9 +21,9 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class Run extends Application implements Initializable {
-	public static String player1_name;
-	public static String player2_name;
-	public static String player3_name;
+	public static String player1_name = "Player 1";
+	public static String player2_name = "Player 2";
+	public static String player3_name = "Player 3";
 	
 	@FXML
 	TextField DiceResult; 
@@ -197,8 +197,7 @@ public class Run extends Application implements Initializable {
 		Roll.setOnAction(new EventHandler<ActionEvent>(){
 			
 			public void handle(ActionEvent event) {
-				//Enter dice rolling method here
-				//Calls dice rolling method
+				Board.players[Player.currentID].doTurn(Board.players[Player.currentID]);
 			}
 		});
 		
