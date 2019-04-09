@@ -95,7 +95,7 @@ public class Player implements Die, Board {
 		return 0;
 	}
 	
-<<<<<<< HEAD
+
 	public void doTurn(Player current) {
 		
 		if (current.broke) {
@@ -103,35 +103,32 @@ public class Player implements Die, Board {
 			doTurn(getCurrentPlayer());
 		}
 		else if (inJail) {
-=======
+
 	public void doTurn(Player currentP) {
 		if (inJail) {
->>>>>>> branch 'master' of https://github.com/maticunha/Monopoly.git
+
 			doJail();
 		}
 		else {
 			int roll1 = rollDie();
 			int roll2 = rollDie();
 			if (roll1 == roll2) {
-<<<<<<< HEAD
 				++current.doublesCounter;
-=======
 				++currentP.doublesCounter;
->>>>>>> branch 'master' of https://github.com/maticunha/Monopoly.git
+
 			}
 			
 			int totalRoll = roll1 + roll2;
 			
 			for (int i = 0; i <= totalRoll; i++) {
-<<<<<<< HEAD
+
 				current.lastPosition = current.position;
 				current.position += 1 % 40;
 				if(current.lastPosition > current.position) {
-=======
+
 				currentP.lastPosition = currentP.position;
 				currentP.position += 1 % 40;
 				if(currentP.lastPosition > currentP.position) {
->>>>>>> branch 'master' of https://github.com/maticunha/Monopoly.git
 					setValue(200);
 					/** 
 					 * Code to say "pass go, collect $200
@@ -140,11 +137,11 @@ public class Player implements Die, Board {
 			}
 			
 			if (spaceArr[position] instanceof  Property) {
-<<<<<<< HEAD
+
 				if((((Property) spaceArr[position]).getOwnedBy()) == current.getID()) {
-=======
+
 				if((((Property) spaceArr[position]).getOwnedBy()) == currentP.getID()) {
->>>>>>> branch 'master' of https://github.com/maticunha/Monopoly.git
+
 					/**
 					 * Code to say you already own this, end turn					
 					 */
@@ -162,11 +159,10 @@ public class Player implements Die, Board {
 					int owner = ((Property) spaceArr[position]).getOwnedBy();
 					int value = spaceArr[position].getValue();
 					
-<<<<<<< HEAD
+
 					current.setValue(-value / 10);
-=======
-					currentP.setValue(-value / 10);
->>>>>>> branch 'master' of https://github.com/maticunha/Monopoly.git
+				currentP.setValue(-value / 10);
+
 					setValue(players[owner], value / 10);
 					/**
 					 * Code to say the user owed other player money
@@ -196,7 +192,6 @@ public class Player implements Die, Board {
 					 * Code to output result
 					 */
 					if (((Event) spaceArr[position]).getGoodOrBad() == 1) {
-<<<<<<< HEAD
 						current.setValue(-50);
 						
 						if (current.getValue() < 0) {
@@ -204,17 +199,17 @@ public class Player implements Die, Board {
 							setCurrentPlayer();
 							doTurn(getCurrentPlayer());
 						}
-=======
+
 						currentP.setValue(-50);
->>>>>>> branch 'master' of https://github.com/maticunha/Monopoly.git
+
 					}
 					
 					else {
-<<<<<<< HEAD
+
 						current.setValue(50);
-=======
+
 						currentP.setValue(50);
->>>>>>> branch 'master' of https://github.com/maticunha/Monopoly.git
+
 					}
 				} //if for community/chance
 				
@@ -223,7 +218,7 @@ public class Player implements Die, Board {
 					 * Code to say player has to pay tax
 					 */
 					
-<<<<<<< HEAD
+
 					current.setValue(-200);
 					
 					if (current.getValue() < 0) {
@@ -231,9 +226,8 @@ public class Player implements Die, Board {
 						setCurrentPlayer();
 						doTurn(getCurrentPlayer());
 					}
-=======
-					currentP.setValue(-200);
->>>>>>> branch 'master' of https://github.com/maticunha/Monopoly.git
+			currentP.setValue(-200);
+
 				}
 				
 				else if (spaceArr[position].getName() == "Free Parking") {
