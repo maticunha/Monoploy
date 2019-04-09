@@ -2,7 +2,7 @@ package edu.wit.compSci1050.project;
 import java.util.Random;
 
 
-public class Player extends Board implements Die {
+public class Player implements Die, Board {
 	String name;
 	int value;
 	int ID;
@@ -14,7 +14,9 @@ public class Player extends Board implements Die {
 
 	
 	Player(String name,int value, int ID, int position, boolean inJail){
-		super(name, position, value);
+		this.name = name;
+		this.value = value;
+		this.position = position;
 		this.ID = ID;
 		inJail = false;
 	}
@@ -79,30 +81,30 @@ public class Player extends Board implements Die {
 				}
 			}
 			
-			if (boardObjects[position + 3] instanceof  Property) {
-				if((Property) (boardObjects[position + 3].getOwnedBy) == getID()) {
+			if (spaceArr[position] instanceof  Property) {
+				if((spaceArr[position].getOwnedBy) == getID()) {
 					
 				}
 				
-				else if(boardObjects[position + 3].getOwnedBy  == 0) {
+				else if(spaceArr[position].getOwnedBy  == 0) {
 					
 				} 
 				
 				else {
-					int owner = boardObjects[position + 3].getOwnedBy;
-					int value = boardObjects[position + 3].getValue;
+					int owner = spaceArr[position].getOwnedBy;
+					int value = spaceArr[position].getValue;
 					
-					setValue((Player) boardObjects[getID()], -value);
-					setValue((Player) boardObjects[owner], value);
+					setValue(-value);
+					setValue(players[owner], value);
 					
 				}
 				
 			}
-			else if (boardObjects[position + 3] instanceof Jail) {
+			else if (spaceArr[position + 3] instanceof Jail) {
 				
 			}
 			
-			else if (boardObjects[position + 3] instanceof Event) {
+			else if (spaceArr[position + 3] instanceof Event) {
 				
 			}
 			
@@ -150,7 +152,6 @@ public class Player extends Board implements Die {
 				}
 		}
 		else if (tryRoll && jailCounter == 2) {
-			Random roll = new Random();	
 			int roll1 =  rollDie();
 			int roll2 = rollDie();
 				if (roll1 == roll2) {
@@ -169,6 +170,18 @@ public class Player extends Board implements Die {
 					doTurn(getID());
 				}
 		}
+	}
+
+	@Override
+	public int getPosition() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void setPosition(int position) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -1,45 +1,28 @@
 package edu.wit.compSci1050.project;
 
-public class Board {
+public interface Board {
 
 	
-	public static Board[] boardObjects = {
+
+	public static Player[] players = {
 		new Player("Player 1", 5000, 1, 0, false),
 		new Player("Player 2", 5000, 2, 0, false),
 		new Player("Player 3", 5000, 3, 0, false),
-		new Property("Test Property", 1, 200),
-		new Event("Test Event", 2, 50),
-		new Jail("Jail", 9, 50)
 	};
-	//testing to push
-	String name;
-	int position;
-	int value; 
+
 	
-	public Board(String name, int position, int value) {
-		this.name = name;
-		this.position = position;
-		this.value = value;
-	}
+	public static Space[] spaceArr = {
+		new Property("Test Property", 50, 1),
+		new Jail("Jail", 9),
+		new Event("Go", 0)
+	};
+
 	
-	public String getName() {
-		return name;
-	}
-	
-	public int getPosition() {
-		return position;
-	}
-	
-	public void setPosition(int position) {
-		this.position = position;
-	}
-	
-	public int getValue() {
-		return value;
-	}
-	public void setValue(int n) {
-		value += n;
-	}
+	public String getName();
+	public int getPosition();
+	public void setPosition(int position);
+	public int getValue();
+	public void setValue(int n);
 	
 	
 	

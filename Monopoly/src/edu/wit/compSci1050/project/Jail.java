@@ -2,13 +2,14 @@ package edu.wit.compSci1050.project;
 
 import java.util.Random;
 
-public class Jail extends Space {
-	
+public class Jail implements Space {
+	String name;
+	int position;
 	
 
-	public Jail(String name, int position, int value) {
-		super(name, position, value);
-		// TODO Auto-generated constructor stub
+	public Jail(String name, int position) {
+		this.name = name;
+		this.position = position;
 	}
 
 	public boolean tryRoll() {
@@ -26,6 +27,36 @@ public class Jail extends Space {
 		
 		return false;
 		
+		
+	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int getPosition() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void setPosition(int position) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int getValue() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void setValue(int n) {
+		// TODO Auto-generated method stub
 		
 	}
 }

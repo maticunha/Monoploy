@@ -1,11 +1,16 @@
 package edu.wit.compSci1050.project;
 
-public class Property extends Space {
+public class Property implements Space {
 	int ownedBy;
+	String name;
+	int position;
+	int value;
 	
 	
 	public Property(String name, int position, int value) {
-		super(name, position, value);
+		this.name = name;
+		this.position = position;
+		this.value = value;
 		
 	}
 	
@@ -27,6 +32,18 @@ public class Property extends Space {
 	
 	public void setOwnedBy(int n) {
 		ownedBy = n;
+	}
+
+	@Override
+	public void setPosition(int position) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setValue(int n) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -2,7 +2,10 @@ package edu.wit.compSci1050.project;
 
 import java.util.Random;
 
-public class Event extends Space {
+public class Event implements Space {
+	int position;
+	String name;
+	
 	
 	String[] eventArrBad = 
 		{
@@ -34,9 +37,9 @@ public class Event extends Space {
 	
 	int goodOrBad = 0;
 	
-	public Event(String name, int position, int value) {
-		super(name, position, value);
-		// TODO Auto-generated constructor stub
+	public Event(String name, int position) {
+		this.name = name;
+		this.position = position;
 	}
 	
 	private void setGoodOrBad() {
@@ -61,6 +64,36 @@ public class Event extends Space {
 			Random seed = new Random();
 			return eventArrGood[seed.nextInt(10)];
 		}
+		
+	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int getPosition() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void setPosition(int position) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int getValue() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void setValue(int n) {
+		// TODO Auto-generated method stub
 		
 	}
 
