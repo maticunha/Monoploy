@@ -11,10 +11,18 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class Run extends Application implements Initializable {
-	public static String player1;
-	public static String player2;
-	public static String player3;
+	public static String player1_name;
+	public static String player2_name;
+	public static String player3_name;
 	
+	@FXML
+	static ImageView Player1; 
+	
+	@FXML
+	static ImageView Player2; 
+	
+	@FXML
+	static ImageView Player3; 
 	
 	@FXML 
 	static ImageView Go;

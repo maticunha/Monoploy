@@ -317,5 +317,20 @@
             <Image url="@Board%20Pictures/community%20chest%20card.jpg" />
          </image>
       </ImageView>
+      <ImageView fx:id="Player1" fitHeight="142.0" fitWidth="115.0" layoutX="217.0" layoutY="541.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Player%20Pictures/player1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Player2" fitHeight="105.0" fitWidth="133.0" layoutX="164.0" layoutY="605.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Player%20Pictures/player2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="Player3" fitHeight="103.0" fitWidth="123.0" layoutX="266.0" layoutY="611.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Player%20Pictures/player3.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>
