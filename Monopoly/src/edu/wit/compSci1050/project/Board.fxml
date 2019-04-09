@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
@@ -84,7 +87,7 @@
          </children></VBox>
       <VBox layoutX="544.0" layoutY="-1.0" prefHeight="103.0" prefWidth="79.0">
          <children>
-            <ImageView fx:id="Question3" fitHeight="173.0" fitWidth="138.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="Question3" fitHeight="131.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Board%20Pictures/chance%20card.jpg" />
                </image>
@@ -110,7 +113,14 @@
          </children></VBox>
       <VBox layoutX="895.0" layoutY="293.0" prefHeight="79.0" prefWidth="98.0" />
       <VBox layoutX="904.0" layoutY="387.0" prefHeight="69.0" prefWidth="94.0" />
-      <VBox layoutX="890.0" layoutY="456.0" prefHeight="79.0" prefWidth="98.0" />
+      <VBox layoutX="902.0" layoutY="438.0" prefHeight="79.0" prefWidth="98.0">
+         <children>
+            <ImageView fx:id="Question4" fitHeight="133.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+               <image>
+                  <Image url="@Board%20Pictures/chance%20card.jpg" />
+               </image>
+            </ImageView>
+         </children></VBox>
       <VBox layoutX="894.0" layoutY="538.0" prefHeight="79.0" prefWidth="98.0" />
       <VBox layoutX="894.0" layoutY="612.0" prefHeight="79.0" prefWidth="98.0" />
       <VBox layoutX="7.0" layoutY="699.0" prefHeight="79.0" prefWidth="98.0" />
@@ -134,14 +144,6 @@
       <VBox layoutX="-3.0" layoutY="784.0" prefHeight="79.0" prefWidth="98.0" />
       <VBox layoutX="4.0" layoutY="456.0" prefHeight="79.0" prefWidth="131.0" />
       <VBox layoutX="5.0" layoutY="617.0" prefHeight="79.0" prefWidth="98.0" />
-      <VBox layoutX="631.0" layoutY="548.0" prefHeight="244.0" prefWidth="98.0" rotate="45.0">
-         <children>
-            <ImageView fitHeight="75.0" fitWidth="138.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../OneDrive%20-%20Wentworth%20Institute%20of%20Technology/Desktop/Computer%20Science%202/slide-14_chrome-logo-100748748-large.jpg" />
-               </image>
-            </ImageView>
-         </children></VBox>
       <VBox layoutX="5.0" layoutY="382.0" prefHeight="79.0" prefWidth="98.0" />
       <VBox layoutX="5.0" layoutY="300.0" prefHeight="79.0" prefWidth="98.0" />
       <VBox layoutX="5.0" layoutY="221.0" prefHeight="79.0" prefWidth="98.0" />
@@ -165,7 +167,7 @@
             <Label text="                                Cash $" GridPane.rowIndex="1" />
          </children>
       </GridPane>
-      <ImageView fitHeight="218.0" fitWidth="298.0" layoutX="168.0" layoutY="213.0" pickOnBounds="true" preserveRatio="true" rotate="-45.0">
+      <ImageView fitHeight="218.0" fitWidth="298.0" layoutX="147.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Board%20Pictures/Chances.jpg" />
          </image>
@@ -213,11 +215,6 @@
       <ImageView fx:id="CommunityChest3" fitHeight="114.0" fitWidth="94.0" layoutX="898.0" layoutY="600.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
          <image>
             <Image url="@Board%20Pictures/community-chest-vintage-monopoly-board-game-theme-card-design-turnpike.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="Question4" fitHeight="181.0" fitWidth="79.0" layoutX="875.0" layoutY="412.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
-         <image>
-            <Image url="@Board%20Pictures/chance%20card.jpg" />
          </image>
       </ImageView>
       <ImageView fx:id="Eclipse" fitHeight="51.0" fitWidth="73.0" layoutX="917.0" layoutY="396.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
@@ -287,12 +284,12 @@
             <Image url="@Board%20Pictures/community-chest-vintage-monopoly-board-game-theme-card-design-turnpike.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="Question" fitHeight="176.0" fitWidth="75.0" layoutX="465.0" layoutY="836.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Question" fitHeight="138.0" fitWidth="70.0" layoutX="465.0" layoutY="857.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Board%20Pictures/chance%20card.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="Question2" fitHeight="176.0" fitWidth="75.0" layoutX="49.0" layoutY="421.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+      <ImageView fx:id="Question2" fitHeight="151.0" fitWidth="61.0" layoutX="42.0" layoutY="425.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
          <image>
             <Image url="@Board%20Pictures/chance%20card.jpg" />
          </image>
@@ -312,11 +309,6 @@
             <Image url="@Board%20Pictures/delphi_logo_2014_11474784.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="221.0" fitWidth="288.0" layoutX="556.0" layoutY="581.0" pickOnBounds="true" preserveRatio="true" rotate="132.0">
-         <image>
-            <Image url="@Board%20Pictures/community%20chest%20card.jpg" />
-         </image>
-      </ImageView>
       <ImageView fx:id="Player1" fitHeight="142.0" fitWidth="115.0" layoutX="217.0" layoutY="541.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Player%20Pictures/player1.png" />
@@ -332,5 +324,24 @@
             <Image url="@Player%20Pictures/player3.png" />
          </image>
       </ImageView>
+      <ImageView fitHeight="212.0" fitWidth="278.0" layoutX="155.0" layoutY="333.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Board%20Pictures/community%20chest%20card.jpg" />
+         </image>
+      </ImageView>
+      <VBox layoutX="484.0" layoutY="551.0" prefHeight="301.0" prefWidth="377.0" style="-fx-background-color: White;">
+         <children>
+            <VBox prefHeight="244.0" prefWidth="98.0" />
+         </children>
+      </VBox>
+      <ScrollPane fx:id="GameLog" layoutX="469.0" layoutY="137.0" prefHeight="713.0" prefWidth="391.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="716.0" prefWidth="387.0">
+               <children>
+                  <TextField fx:id="Log" layoutX="5.0" layoutY="14.0" prefHeight="683.0" prefWidth="369.0" />
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
    </children>
 </Pane>
