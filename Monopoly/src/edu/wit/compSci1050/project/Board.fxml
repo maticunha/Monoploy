@@ -149,9 +149,8 @@
       <VBox layoutX="5.0" layoutY="300.0" prefHeight="79.0" prefWidth="98.0" />
       <VBox layoutX="5.0" layoutY="221.0" prefHeight="79.0" prefWidth="98.0" />
       <VBox layoutX="6.0" layoutY="136.0" prefHeight="79.0" prefWidth="98.0" />
-      <GridPane layoutX="4.0" layoutY="1002.0" prefHeight="198.0" prefWidth="992.0">
+      <GridPane layoutX="135.0" layoutY="524.0" prefHeight="198.0" prefWidth="331.0">
         <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -161,11 +160,24 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="                                Player 1" GridPane.columnIndex="1" />
-            <Label text="                                Player 2" GridPane.columnIndex="2" />
-            <Label text="                                Player 3" GridPane.columnIndex="3" />
-            <Label text="                                Stats" />
-            <Label text="                                Cash $" GridPane.rowIndex="1" />
+            <Label text="           Player 1" />
+            <Label text="           Player 2" GridPane.columnIndex="1" />
+            <Label text="           Player 3" GridPane.columnIndex="2" />
+            <ImageView fx:id="Player1" fitHeight="142.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@Player%20Pictures/player1.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Player2" fitHeight="105.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@Player%20Pictures/player2.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="Player3" fitHeight="103.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <image>
+                  <Image url="@Player%20Pictures/player3.png" />
+               </image>
+            </ImageView>
          </children>
       </GridPane>
       <ImageView fitHeight="218.0" fitWidth="298.0" layoutX="147.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
@@ -308,21 +320,6 @@
       <ImageView fx:id="Delphi" fitHeight="38.0" fitWidth="82.0" layoutX="900.0" layoutY="321.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
          <image>
             <Image url="@Board%20Pictures/delphi_logo_2014_11474784.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="Player1" fitHeight="142.0" fitWidth="115.0" layoutX="217.0" layoutY="541.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Player%20Pictures/player1.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="Player2" fitHeight="105.0" fitWidth="133.0" layoutX="164.0" layoutY="605.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Player%20Pictures/player2.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="Player3" fitHeight="103.0" fitWidth="123.0" layoutX="266.0" layoutY="611.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Player%20Pictures/player3.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="212.0" fitWidth="278.0" layoutX="155.0" layoutY="333.0" pickOnBounds="true" preserveRatio="true">

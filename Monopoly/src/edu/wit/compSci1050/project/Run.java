@@ -12,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.DialogPane;
 import javafx.scene.control.ScrollPane;
@@ -24,6 +25,9 @@ public class Run extends Application implements Initializable {
 	public static String player1_name;
 	public static String player2_name;
 	public static String player3_name;
+	
+	
+	
 	
 	@FXML
 	TextField DiceResult; 
@@ -183,7 +187,7 @@ public class Run extends Application implements Initializable {
 		// TODO Auto-generated method stub
 		Parent root = FXMLLoader.load(getClass().getResource("Board.fxml"));
 		Scene scene = new Scene(root);
-		arg0.setTitle("Monopoly");
+		arg0.setTitle("Monopoly Computer Science Edition");
 		arg0.setScene(scene);
 		arg0.show();
 	}
