@@ -1,8 +1,8 @@
 package edu.wit.compSci1050.project;
-
+//comments
 public interface Board {
 
-	
+	//comment to push
 
 	public static Player[] players = {
 		new Player(Run.player1_name, 5000, 0, 0, false),

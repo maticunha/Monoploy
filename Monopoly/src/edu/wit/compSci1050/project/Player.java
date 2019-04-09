@@ -1,6 +1,8 @@
 package edu.wit.compSci1050.project;
 import java.util.Random;
 
+//comments 
+
 
 public class Player implements Die, Board {
 	String name;
@@ -104,7 +106,7 @@ public class Player implements Die, Board {
 		}
 		else if (inJail) {
 
-	public void doTurn(Player currentP) {
+	
 		if (inJail) {
 
 			doJail();
@@ -114,7 +116,7 @@ public class Player implements Die, Board {
 			int roll2 = rollDie();
 			if (roll1 == roll2) {
 				++current.doublesCounter;
-				++currentP.doublesCounter;
+				++current.doublesCounter;
 
 			}
 			
@@ -126,9 +128,9 @@ public class Player implements Die, Board {
 				current.position += 1 % 40;
 				if(current.lastPosition > current.position) {
 
-				currentP.lastPosition = currentP.position;
-				currentP.position += 1 % 40;
-				if(currentP.lastPosition > currentP.position) {
+				current.lastPosition = current.position;
+				current.position += 1 % 40;
+				if(current.lastPosition > current.position) {
 					setValue(200);
 					/** 
 					 * Code to say "pass go, collect $200
@@ -140,7 +142,7 @@ public class Player implements Die, Board {
 
 				if((((Property) spaceArr[position]).getOwnedBy()) == current.getID()) {
 
-				if((((Property) spaceArr[position]).getOwnedBy()) == currentP.getID()) {
+				if((((Property) spaceArr[position]).getOwnedBy()) == current.getID()) {
 
 					/**
 					 * Code to say you already own this, end turn					
@@ -161,7 +163,7 @@ public class Player implements Die, Board {
 					
 
 					current.setValue(-value / 10);
-				currentP.setValue(-value / 10);
+				current.setValue(-value / 10);
 
 					setValue(players[owner], value / 10);
 					/**
@@ -200,7 +202,7 @@ public class Player implements Die, Board {
 							doTurn(getCurrentPlayer());
 						}
 
-						currentP.setValue(-50);
+						current.setValue(-50);
 
 					}
 					
@@ -208,7 +210,7 @@ public class Player implements Die, Board {
 
 						current.setValue(50);
 
-						currentP.setValue(50);
+						current.setValue(50);
 
 					}
 				} //if for community/chance
@@ -226,7 +228,7 @@ public class Player implements Die, Board {
 						setCurrentPlayer();
 						doTurn(getCurrentPlayer());
 					}
-			currentP.setValue(-200);
+			current.setValue(-200);
 
 				}
 				
@@ -268,6 +270,9 @@ public class Player implements Die, Board {
 				setCurrentPlayer();
 				doTurn(getCurrentPlayer());
 			}
+		}
+		}
+		}
 		}
 	}
 	
