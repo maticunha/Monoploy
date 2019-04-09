@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Run.java">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wit.compSci1050.project.Run">
    <children>
       <ImageView fitHeight="1000.0" fitWidth="1000.0" layoutX="2.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
          <image>
@@ -18,7 +18,7 @@
       </ImageView>
       <VBox layoutX="863.0" layoutY="6.0" prefHeight="130.0" prefWidth="137.0">
          <children>
-            <ImageView fitHeight="133.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="GoToJail" fitHeight="133.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Board%20Pictures/GO_TO_JAIL.jpg" />
                </image>
@@ -26,7 +26,7 @@
          </children></VBox>
       <VBox layoutX="863.0" layoutY="864.0" prefHeight="130.0" prefWidth="137.0">
          <children>
-            <ImageView fitHeight="133.0" fitWidth="148.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="Go" fitHeight="133.0" fitWidth="148.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Board%20Pictures/Go-.gif" />
                </image>
@@ -34,7 +34,7 @@
          </children></VBox>
       <VBox layoutY="6.0" prefHeight="130.0" prefWidth="137.0">
          <children>
-            <ImageView fitHeight="133.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="FreeParking" fitHeight="133.0" fitWidth="141.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Board%20Pictures/free-parking.jpg" />
                </image>
@@ -43,7 +43,7 @@
       </VBox>
       <VBox layoutX="390.0" layoutY="4.0" prefHeight="103.0" prefWidth="79.0">
          <children>
-            <ImageView fitHeight="93.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="R" fitHeight="93.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Board%20Pictures/r_logo.png" />
                </image>
@@ -51,7 +51,7 @@
          </children></VBox>
       <VBox layoutX="302.0" layoutY="20.0" prefHeight="103.0" prefWidth="79.0">
          <children>
-            <ImageView fitHeight="64.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="InternetExplorer" fitHeight="64.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Board%20Pictures/Internet_Explorer_9_icon.svg.png" />
                </image>
@@ -59,7 +59,7 @@
          </children></VBox>
       <VBox layoutX="6.0" layoutY="864.0" prefHeight="130.0" prefWidth="137.0">
          <children>
-            <ImageView fitHeight="130.0" fitWidth="161.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+            <ImageView fx:id="Jail" fitHeight="130.0" fitWidth="161.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
                <image>
                   <Image url="@Board%20Pictures/jail.jpg" />
                </image>
@@ -67,7 +67,7 @@
          </children></VBox>
       <VBox layoutX="224.0" layoutY="4.0" prefHeight="103.0" prefWidth="79.0">
          <children>
-            <ImageView fitHeight="79.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="Lua" fitHeight="79.0" fitWidth="68.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Board%20Pictures/LUA_Logo.png" />
                </image>
@@ -94,7 +94,7 @@
       <VBox layoutX="788.0" layoutY="4.0" prefHeight="103.0" prefWidth="79.0" />
       <VBox layoutX="897.0" layoutY="136.0" prefHeight="79.0" prefWidth="98.0">
          <children>
-            <ImageView fitHeight="64.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+            <ImageView fx:id="MATLAB" fitHeight="64.0" fitWidth="115.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
                <image>
                   <Image url="@Board%20Pictures/f04f2fae24473f8150e2dad7d9a008fd.png" />
                </image>
@@ -102,7 +102,7 @@
          </children></VBox>
       <VBox layoutX="897.0" layoutY="220.0" prefHeight="79.0" prefWidth="98.0">
          <children>
-            <ImageView fitHeight="114.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+            <ImageView fx:id="Razer" fitHeight="114.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
                <image>
                   <Image url="@Board%20Pictures/razer%20logo.png" />
                </image>
@@ -120,7 +120,7 @@
       <VBox layoutX="625.0" layoutY="897.0" prefHeight="103.0" prefWidth="79.0" />
       <VBox layoutX="546.0" layoutY="897.0" prefHeight="103.0" prefWidth="79.0">
          <children>
-            <ImageView fitHeight="103.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="JavaScript" fitHeight="103.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Board%20Pictures/javascript_logo.png" />
                </image>
@@ -170,42 +170,42 @@
             <Image url="@Board%20Pictures/Chances.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="71.0" fitWidth="74.0" layoutX="629.0" layoutY="913.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Perl" fitHeight="71.0" fitWidth="74.0" layoutX="629.0" layoutY="913.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Board%20Pictures/perl-logo.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="44.0" fitWidth="70.0" layoutX="788.0" layoutY="929.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Assembly" fitHeight="44.0" fitWidth="70.0" layoutX="788.0" layoutY="929.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Board%20Pictures/assembly-logo-afe63f47.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="68.0" fitWidth="69.0" layoutX="390.0" layoutY="915.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="HTML5" fitHeight="68.0" fitWidth="69.0" layoutX="390.0" layoutY="915.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Board%20Pictures/html.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="69.0" fitWidth="69.0" layoutX="226.0" layoutY="912.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Java" fitHeight="69.0" fitWidth="69.0" layoutX="226.0" layoutY="912.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Board%20Pictures/java-logo.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="103.0" fitWidth="69.0" layoutX="146.0" layoutY="912.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Scratch" fitHeight="103.0" fitWidth="69.0" layoutX="146.0" layoutY="912.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Board%20Pictures/scratch.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="57.0" fitWidth="98.0" layoutX="917.0" layoutY="794.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+      <ImageView fx:id="OBJC" fitHeight="57.0" fitWidth="98.0" layoutX="917.0" layoutY="794.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
          <image>
             <Image url="@Board%20Pictures/objective-c-bordered-turquoise.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="64.0" fitWidth="61.0" layoutX="916.0" layoutY="713.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+      <ImageView fx:id="CSharp" fitHeight="64.0" fitWidth="61.0" layoutX="916.0" layoutY="713.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
          <image>
             <Image url="@Board%20Pictures/c%23.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="43.0" fitWidth="76.0" layoutX="30.0" layoutY="717.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+      <ImageView fx:id="Chrome" fitHeight="43.0" fitWidth="76.0" layoutX="30.0" layoutY="717.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
          <image>
             <Image url="@Board%20Pictures/slide-14_chrome-logo-100748748-large.jpg" />
          </image>
@@ -220,22 +220,22 @@
             <Image url="@Board%20Pictures/chance%20card.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="51.0" fitWidth="73.0" layoutX="917.0" layoutY="396.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+      <ImageView fx:id="Eclipse" fitHeight="51.0" fitWidth="73.0" layoutX="917.0" layoutY="396.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
          <image>
             <Image url="@Board%20Pictures/eclipse-400x400.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="15.0" fitWidth="51.0" layoutX="919.0" layoutY="570.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+      <ImageView fx:id="Swift" fitHeight="15.0" fitWidth="51.0" layoutX="919.0" layoutY="570.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
          <image>
             <Image url="@Board%20Pictures/1280px-Swift_logo_with_text.svg.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="86.0" fitWidth="71.0" layoutX="792.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="PowerShell" fitHeight="86.0" fitWidth="71.0" layoutX="792.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Board%20Pictures/powershell2.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="71.0" fitWidth="60.0" layoutX="714.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Windows" fitHeight="71.0" fitWidth="60.0" layoutX="714.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Board%20Pictures/microsoft-windows-10-icon-logo-vector.png" />
          </image>
@@ -245,28 +245,28 @@
             <Image url="@Board%20Pictures/cpp_logo.png" />
          </image>
       </ImageView>
-      <VBox layoutX="627.0" layoutY="5.0" prefHeight="103.0" prefWidth="79.0" />
-      <ImageView fitHeight="86.0" fitWidth="76.0" layoutX="146.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+      <VBox fx:id="CPlus" layoutX="627.0" layoutY="5.0" prefHeight="103.0" prefWidth="79.0" />
+      <ImageView fx:id="PHP" fitHeight="86.0" fitWidth="76.0" layoutX="146.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Board%20Pictures/php_PNG7.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="72.0" fitWidth="59.0" layoutX="25.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+      <ImageView fx:id="OpenGL" fitHeight="72.0" fitWidth="59.0" layoutX="25.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
          <image>
             <Image url="@Board%20Pictures/opengl_icon.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="86.0" fitWidth="72.0" layoutX="19.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+      <ImageView fx:id="FireFox" fitHeight="86.0" fitWidth="72.0" layoutX="19.0" layoutY="224.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
          <image>
             <Image url="@Board%20Pictures/1200px-Firefox_Logo,_2017.svg.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="64.0" fitWidth="61.0" layoutX="21.0" layoutY="302.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+      <ImageView fx:id="VB" fitHeight="64.0" fitWidth="61.0" layoutX="21.0" layoutY="302.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
          <image>
             <Image url="@Board%20Pictures/virtual%20basic.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="72.0" fitWidth="60.0" layoutX="18.0" layoutY="386.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+      <ImageView fx:id="Python" fitHeight="72.0" fitWidth="60.0" layoutX="18.0" layoutY="386.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
          <image>
             <Image url="@Board%20Pictures/python-logo.jpg" />
          </image>
@@ -276,18 +276,18 @@
             <Image url="@Board%20Pictures/json-logo.png" />
          </image>
       </ImageView>
-      <VBox layoutX="-3.0" layoutY="535.0" prefHeight="79.0" prefWidth="98.0" />
-      <ImageView fitHeight="75.0" fitWidth="71.0" layoutX="24.0" layoutY="781.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+      <VBox fx:id="JSON" layoutX="-3.0" layoutY="535.0" prefHeight="79.0" prefWidth="98.0" />
+      <ImageView fx:id="Ruby" fitHeight="75.0" fitWidth="71.0" layoutX="24.0" layoutY="781.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
          <image>
             <Image url="@Board%20Pictures/ruby02.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="103.0" fitWidth="75.0" layoutX="707.0" layoutY="891.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="CommunityChest" fitHeight="103.0" fitWidth="75.0" layoutX="707.0" layoutY="891.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Board%20Pictures/community-chest-vintage-monopoly-board-game-theme-card-design-turnpike.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="176.0" fitWidth="75.0" layoutX="465.0" layoutY="836.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Question" fitHeight="176.0" fitWidth="75.0" layoutX="465.0" layoutY="836.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Board%20Pictures/chance%20card.jpg" />
          </image>
@@ -297,17 +297,17 @@
             <Image url="@Board%20Pictures/chance%20card.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="89.0" fitWidth="64.0" layoutX="310.0" layoutY="900.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="Tax" fitHeight="89.0" fitWidth="64.0" layoutX="310.0" layoutY="900.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Board%20Pictures/income%20tax.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="32.0" fitWidth="57.0" layoutX="26.0" layoutY="640.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+      <ImageView fx:id="Scala" fitHeight="32.0" fitWidth="57.0" layoutX="26.0" layoutY="640.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
          <image>
             <Image url="@Board%20Pictures/Scala_logo.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="38.0" fitWidth="82.0" layoutX="900.0" layoutY="321.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
+      <ImageView fx:id="Delphi" fitHeight="38.0" fitWidth="82.0" layoutX="900.0" layoutY="321.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
          <image>
             <Image url="@Board%20Pictures/delphi_logo_2014_11474784.jpg" />
          </image>
