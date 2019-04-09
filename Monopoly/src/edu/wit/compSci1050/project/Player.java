@@ -97,20 +97,37 @@ public class Player implements Die, Board {
 		return 0;
 	}
 	
+
+	public void doTurn(Player current) {
+		
+		if (current.broke) {
+			setCurrentPlayer();
+			doTurn(getCurrentPlayer());
+		}
+		else if (inJail) {
+
 	public void doTurn(Player currentP) {
 		if (inJail) {
+
 			doJail();
 		}
 		else {
 			int roll1 = rollDie();
 			int roll2 = rollDie();
 			if (roll1 == roll2) {
+				++current.doublesCounter;
 				++currentP.doublesCounter;
+
 			}
 			
 			int totalRoll = roll1 + roll2;
 			
 			for (int i = 0; i <= totalRoll; i++) {
+
+				current.lastPosition = current.position;
+				current.position += 1 % 40;
+				if(current.lastPosition > current.position) {
+
 				currentP.lastPosition = currentP.position;
 				currentP.position += 1 % 40;
 				if(currentP.lastPosition > currentP.position) {
@@ -122,7 +139,11 @@ public class Player implements Die, Board {
 			}
 			
 			if (spaceArr[position] instanceof  Property) {
+
+				if((((Property) spaceArr[position]).getOwnedBy()) == current.getID()) {
+
 				if((((Property) spaceArr[position]).getOwnedBy()) == currentP.getID()) {
+
 					/**
 					 * Code to say you already own this, end turn					
 					 */
@@ -140,12 +161,20 @@ public class Player implements Die, Board {
 					int owner = ((Property) spaceArr[position]).getOwnedBy();
 					int value = spaceArr[position].getValue();
 					
-					currentP.setValue(-value / 10);
+
+					current.setValue(-value / 10);
+				currentP.setValue(-value / 10);
+
 					setValue(players[owner], value / 10);
 					/**
 					 * Code to say the user owed other player money
 					 * end turn
 					 */
+					if (current.getValue() < 0) {
+						broke = true;
+						setCurrentPlayer();
+						doTurn(getCurrentPlayer());
+					}
 				}
 				
 			}
@@ -165,11 +194,24 @@ public class Player implements Die, Board {
 					 * Code to output result
 					 */
 					if (((Event) spaceArr[position]).getGoodOrBad() == 1) {
+						current.setValue(-50);
+						
+						if (current.getValue() < 0) {
+							broke = true;
+							setCurrentPlayer();
+							doTurn(getCurrentPlayer());
+						}
+
 						currentP.setValue(-50);
+
 					}
 					
 					else {
+
+						current.setValue(50);
+
 						currentP.setValue(50);
+
 					}
 				} //if for community/chance
 				
@@ -178,7 +220,16 @@ public class Player implements Die, Board {
 					 * Code to say player has to pay tax
 					 */
 					
-					currentP.setValue(-200);
+
+					current.setValue(-200);
+					
+					if (current.getValue() < 0) {
+						broke = true;
+						setCurrentPlayer();
+						doTurn(getCurrentPlayer());
+					}
+			currentP.setValue(-200);
+
 				}
 				
 				else if (spaceArr[position].getName() == "Free Parking") {
@@ -235,6 +286,12 @@ public class Player implements Die, Board {
 		 */
 		if (pay) {
 			setValue(-50);
+			
+			if (this.getValue() < 0) {
+				broke = true;
+				setCurrentPlayer();
+				doTurn(getCurrentPlayer());
+			}
 			inJail = false;
 			doTurn(getCurrentPlayer());
 		}
@@ -270,6 +327,12 @@ public class Player implements Die, Board {
 					 * Code to say breakout failed, pay 50 dollars and continue turn
 					 */
 					setValue(-50);
+					
+					if (this.getValue() < 0) {
+						broke = true;
+						setCurrentPlayer();
+						doTurn(getCurrentPlayer());
+					}
 					inJail = false;
 					doTurn(getCurrentPlayer());
 				}
