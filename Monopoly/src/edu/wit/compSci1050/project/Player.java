@@ -8,10 +8,11 @@ public class Player implements Die, Board {
 	int ID;
 	int position;
 	int lastPosition;
-	boolean inJail;
 	int jailCounter = 0;
 	int doublesCounter = 0;
-
+	boolean inJail = false;
+	boolean broke = false;
+	static int current = 0;
 	
 	Player(String name,int value, int ID, int position, boolean inJail){
 		this.name = name;
@@ -30,6 +31,14 @@ public class Player implements Die, Board {
 	public int getID() {
 		return ID;
 		
+	}
+	
+	public static Player getCurrentPlayer() {
+		return players[current];
+	}
+	
+	public static Player setCurrentPlayer() {
+		return players[(current + 1) % 3];
 	}
 	
 	public int getValue() {
@@ -60,7 +69,25 @@ public class Player implements Die, Board {
 		return roll1;
 	}
 	
-	public void doTurn(int ID) {
+	@Override
+	public int getPosition() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void setPosition(int position) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int getOwnedBy() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	public void doTurn(Player n) {
 		if (inJail) {
 			doJail();
 		}
@@ -68,21 +95,24 @@ public class Player implements Die, Board {
 			int roll1 = rollDie();
 			int roll2 = rollDie();
 			if (roll1 == roll2) {
-				++doublesCounter;
+				++n.doublesCounter;
 			}
 			
 			int totalRoll = roll1 + roll2;
 			
 			for (int i = 0; i <= totalRoll; i++) {
-				lastPosition = position;
-				position += 1 % 40;
-				if(lastPosition > position) {
+				n.lastPosition = n.position;
+				n.position += 1 % 40;
+				if(n.lastPosition > n.position) {
 					setValue(200);
+					/** 
+					 * Code to say "pass go, collect $200
+					 */
 				}
 			}
 			
 			if (spaceArr[position] instanceof  Property) {
-				if((((Property) spaceArr[position]).getOwnedBy()) == getID()) {
+				if((((Property) spaceArr[position]).getOwnedBy()) == n.getID()) {
 					/**
 					 * Code to say you already own this, end turn					
 					 */
@@ -100,8 +130,8 @@ public class Player implements Die, Board {
 					int owner = ((Property) spaceArr[position]).getOwnedBy();
 					int value = spaceArr[position].getValue();
 					
-					setValue(-value);
-					setValue(players[owner], value);
+					n.setValue(-value / 10);
+					setValue(players[owner], value / 10);
 					/**
 					 * Code to say the user owed other player money
 					 * end turn
@@ -109,24 +139,75 @@ public class Player implements Die, Board {
 				}
 				
 			}
-			else if (spaceArr[position + 3] instanceof Jail) {
+			else if (spaceArr[position] instanceof Jail) {
 				/** 
-				 * Code to saw user is visiting Jail
+				 * Code to say user is visiting Jail
 				 * End turn
 				 */
 				
 			}
 			
-			else if (spaceArr[position + 3] instanceof Event) {
+			else if (spaceArr[position] instanceof Event) {
+				
+				if(spaceArr[position].getName() == "Community Chest" || spaceArr[position].getName() == "Chance") {
+					String result = ((Event) spaceArr[position]).getEvent();
+					/**
+					 * Code to output result
+					 */
+					if (((Event) spaceArr[position]).getGoodOrBad() == 1) {
+						n.setValue(-50);
+					}
+					
+					else {
+						n.setValue(50);
+					}
+				} //if for community/chance
+				
+				else if (spaceArr[position].getName() == "Income Tax") {
+					/**
+					 * Code to say player has to pay tax
+					 */
+					
+					n.setValue(-200);
+				}
+				
+				else if (spaceArr[position].getName() == "Free Parking") {
+					/**
+					 * Code to say player gets to park for free!
+					 */
+				}
+				
+				else if(spaceArr[position].getName() == "Go To Jail") {
+					inJail = true;
+					/**
+					 * Code to send player to jail
+					 * Code to display that the player is in jail
+					 */
+					setCurrentPlayer();
+					doTurn(getCurrentPlayer());
+				}
+				
 				
 			}
 			
-			if (doublesCounter > 1) {
-				doTurn(getID());
+			if (doublesCounter == 1 || doublesCounter == 2) {
+				setCurrentPlayer();
+				doTurn(getCurrentPlayer());
 			}
 			
+			else if (doublesCounter == 3) {
+				inJail = true;
+				/**
+				 * Code to say player is in Jail
+				 * Move player to jail
+				 */
+				
+				setCurrentPlayer();
+				doTurn(getCurrentPlayer());
+			}
 			else {
-				doTurn(nextPlayer());
+				setCurrentPlayer();
+				doTurn(getCurrentPlayer());
 			}
 		}
 	}
@@ -145,14 +226,14 @@ public class Player implements Die, Board {
 		if (pay) {
 			setValue(-50);
 			inJail = false;
-			doTurn(getID());
+			doTurn(getCurrentPlayer());
 		}
 		else if (tryRoll) {
 			int roll1 =  rollDie();
 			int roll2 = rollDie();
 				if (roll1 == roll2) {
 					inJail = false;
-					doTurn(getID());
+					doTurn(getCurrentPlayer());
 					/**
 					 * Code to say "hey you got out!"
 					 */
@@ -169,7 +250,7 @@ public class Player implements Die, Board {
 			int roll2 = rollDie();
 				if (roll1 == roll2) {
 					inJail = false;
-					doTurn(getID());
+					doTurn(getCurrentPlayer());
 					/**
 					 * Code to say you got out!
 					 */
@@ -180,27 +261,11 @@ public class Player implements Die, Board {
 					 */
 					setValue(-50);
 					inJail = false;
-					doTurn(getID());
+					doTurn(getCurrentPlayer());
 				}
 		}
 	}
 
-	@Override
-	public int getPosition() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
-	@Override
-	public void setPosition(int position) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public int getOwnedBy() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 }

@@ -48,7 +48,7 @@ public class Event implements Space {
 		
 	}
 	
-	private int getGoodOrBad() {
+	public int getGoodOrBad() {
 		return goodOrBad;
 	}
 	
