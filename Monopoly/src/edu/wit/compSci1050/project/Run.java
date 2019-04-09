@@ -5,13 +5,19 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DialogPane;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class Run extends Application implements Initializable {
@@ -169,18 +175,32 @@ public class Run extends Application implements Initializable {
 	};
 	
 	public static void main (String[] args) {
-	
+		launch(args);
 	}
 
 	@Override
 	public void start(Stage arg0) throws Exception {
 		// TODO Auto-generated method stub
-		
+		Parent root = FXMLLoader.load(getClass().getResource("Board.fxml"));
+		Scene scene = new Scene(root);
+		arg0.setTitle("Monopoly");
+		arg0.setScene(scene);
+		arg0.show();
 	}
+
+		
+	
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
+		Roll.setOnAction(new EventHandler<ActionEvent>(){
+			
+			public void handle(ActionEvent event) {
+				//Enter dice rolling method here
+				//Calls dice rolling method
+			}
+		});
 		
 	}
 
