@@ -50,7 +50,7 @@ public class Player implements Die, Board {
 	}
 	
 	public void setValue(Player n, int v) {
-		current.setValue(v);
+		n.setValue(v);
 	}
 	
 	public int nextPlayer() {
