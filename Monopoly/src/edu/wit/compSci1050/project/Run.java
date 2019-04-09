@@ -8,141 +8,140 @@ import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class Run extends Application implements Initializable {
 	public static String player1;
 	public static String player2;
 	public static String player3;
-	public static ImageView[] images = { 
-			
+	
+	
+	@FXML 
+	static ImageView Go;
+	
+	@FXML 
+	static ImageView Assembly; 
+	
+	@FXML
+	static ImageView CommunityChest;
+	
+	@FXML
+	static ImageView CommunityChest2; 
+	
+	@FXML
+	static ImageView CommunityChest3; 
+	
+	@FXML
+	static ImageView Perl;
+	
+	@FXML
+	static ImageView JavaScript; 
+	
+	@FXML
+	static ImageView Question;
+	
+	@FXML
+	static ImageView Question2; 
+	
+	@FXML
+	static ImageView Question3;
+	
+	@FXML
+	static ImageView Question4; 
+	
+	@FXML
+	static ImageView HTML5; 
+	
+	@FXML
+	static ImageView Tax;
+	
+	@FXML
+	static ImageView Java; 
+	
+	@FXML
+	static ImageView Scratch;
+	
+	@FXML
+	static ImageView Jail;
+	
+	@FXML
+	static ImageView Ruby; 
+	
+	@FXML
+	static ImageView Chrome;
+	
+	@FXML
+	static ImageView Scala;
+	
+	@FXML
+	static ImageView JSON;
+	
+	@FXML
+	static ImageView Python; 
+	
+	@FXML
+	static ImageView VB; 
+	
+	@FXML
+	static ImageView FireFox;
+	
+	@FXML
+	static ImageView OpenGL;
+	
+	@FXML
+	static ImageView FreeParking; 
+	
+	@FXML
+	static ImageView PHP;
+	
+	@FXML
+	static ImageView Lua; 
+	
+	@FXML
+	static ImageView InternetExplorer; 
+	
+	@FXML
+	static ImageView R; 
+	
+	@FXML
+	static ImageView CPlus;
+	
+	@FXML
+	static ImageView Windows; 
+	
+	@FXML
+	static ImageView PowerShell; 
+	
+	@FXML
+	static ImageView GoToJail;
+	
+	@FXML
+	static ImageView MATLAB; 
+	
+	@FXML
+	static ImageView Razer; 
+	
+	@FXML
+	static ImageView Delphi; 
+	
+	@FXML
+	static ImageView Eclipse; 
+	
+	@FXML
+	static ImageView Swift; 
+	
+	@FXML
+	static ImageView CSharp; 
+	
+	@FXML
+	static ImageView OBJC; 
+	
+	public static ImageView[] spaces = { 
+		Go, Assembly, CommunityChest, 	
 	};
 	
-	@FXML 
-	ImageView Go;
-	
-	@FXML 
-	ImageView Assembly; 
-	
-	@FXML
-	ImageView CommunityChest;
-	
-	@FXML
-	ImageView CommunityChest2; 
-	
-	@FXML
-	ImageView CommunityChest3; 
-	
-	@FXML
-	ImageView Perl;
-	
-	@FXML
-	ImageView JavaScript; 
-	
-	@FXML
-	ImageView Question;
-	
-	@FXML
-	ImageView Question2; 
-	
-	@FXML
-	ImageView Question3;
-	
-	@FXML
-	ImageView Question4; 
-	
-	@FXML
-	ImageView HTML5; 
-	
-	@FXML
-	ImageView Tax;
-	
-	@FXML
-	ImageView Java; 
-	
-	@FXML
-	ImageView Scratch;
-	
-	@FXML
-	ImageView Jail;
-	
-	@FXML
-	ImageView Ruby; 
-	
-	@FXML
-	ImageView Chrome;
-	
-	@FXML
-	ImageView Scala;
-	
-	@FXML
-	ImageView JSON;
-	
-	@FXML
-	ImageView Python; 
-	
-	@FXML
-	ImageView VB; 
-	
-	@FXML
-	ImageView FireFox;
-	
-	@FXML
-	ImageView OpenGL;
-	
-	@FXML
-	ImageView FreeParking; 
-	
-	@FXML
-	ImageView PHP;
-	
-	@FXML
-	ImageView Lua; 
-	
-	@FXML
-	ImageView InternetExplorer; 
-	
-	@FXML
-	ImageView R; 
-	
-	@FXML
-	ImageView CPlus;
-	
-	@FXML
-	ImageView Windows; 
-	
-	@FXML
-	ImageView PowerShell; 
-	
-	@FXML
-	ImageView GoToJail;
-	
-	@FXML
-	ImageView MATLAB; 
-	
-	@FXML
-	ImageView Razer; 
-	
-	@FXML
-	ImageView Delphi; 
-	
-	@FXML
-	ImageView Eclipse; 
-	
-	@FXML
-	ImageView Swift; 
-	
-	@FXML
-	ImageView CSharp; 
-	
-	@FXML
-	ImageView OBJC; 
-	
 	public static void main (String[] args) {
-		VBox[] vboxes = { 
-				
-		};
+	
 	}
 
 	@Override
