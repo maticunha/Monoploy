@@ -5,9 +5,9 @@ public interface Board {
 	
 
 	public Player[] players = {
-		new Player(Run.player1, 5000, 0, 0, false),
-		new Player(Run.player2, 5000, 1, 0, false),
-		new Player(Run.player3, 5000, 2, 0, false),
+		new Player(Run.player1_name, 5000, 0, 0, false),
+		new Player(Run.player2_name, 5000, 1, 0, false),
+		new Player(Run.player3_name, 5000, 2, 0, false),
 	};
 
 	
