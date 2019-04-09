@@ -137,7 +137,11 @@ public class Run extends Application implements Initializable {
 	static ImageView OBJC; 
 	
 	public static ImageView[] spaces = { 
-		Go, Assembly, CommunityChest, 	
+		Go, Assembly, CommunityChest, Perl, JavaScript, Question, HTML5, Tax, Java, 
+		Scratch, Jail, Ruby, Scala, JSON, Question2, Python, VB, FireFox, OpenGL, 
+		FreeParking, PHP, Lua, InternetExplorer, R, CommunityChest2, Question3, CPlus,
+		Windows, PowerShell, GoToJail, MATLAB, Razer, Delphi, Eclipse, Question4, 
+		Swift, CommunityChest3, CSharp, OBJC
 	};
 	
 	public static void main (String[] args) {
