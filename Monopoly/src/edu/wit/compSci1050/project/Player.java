@@ -82,25 +82,38 @@ public class Player implements Die, Board {
 			}
 			
 			if (spaceArr[position] instanceof  Property) {
-				if((spaceArr[position].getOwnedBy) == getID()) {
+				if((((Property) spaceArr[position]).getOwnedBy()) == getID()) {
+					/**
+					 * Code to say you already own this, end turn					
+					 */
 					
 				}
 				
-				else if(spaceArr[position].getOwnedBy  == 0) {
-					
+				else if(((Property) spaceArr[position]).getOwnedBy()  == 0) {
+					/**
+					 * Code to ask if the user wants to buy this
+					 * end turn
+					 */
 				} 
 				
 				else {
-					int owner = spaceArr[position].getOwnedBy;
-					int value = spaceArr[position].getValue;
+					int owner = ((Property) spaceArr[position]).getOwnedBy();
+					int value = spaceArr[position].getValue();
 					
 					setValue(-value);
 					setValue(players[owner], value);
-					
+					/**
+					 * Code to say the user owed other player money
+					 * end turn
+					 */
 				}
 				
 			}
 			else if (spaceArr[position + 3] instanceof Jail) {
+				/** 
+				 * Code to saw user is visiting Jail
+				 * End turn
+				 */
 				
 			}
 			
@@ -182,6 +195,12 @@ public class Player implements Die, Board {
 	public void setPosition(int position) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public int getOwnedBy() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }

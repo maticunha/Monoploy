@@ -59,4 +59,10 @@ public class Jail implements Space {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public int getOwnedBy() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

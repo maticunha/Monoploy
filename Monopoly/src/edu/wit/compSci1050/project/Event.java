@@ -70,13 +70,13 @@ public class Event implements Space {
 	@Override
 	public String getName() {
 		// TODO Auto-generated method stub
-		return null;
+		return name;
 	}
 
 	@Override
 	public int getPosition() {
 		// TODO Auto-generated method stub
-		return 0;
+		return position;
 	}
 
 	@Override
@@ -96,5 +96,17 @@ public class Event implements Space {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public int getOwnedBy() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+
+
+
+
 
 }

@@ -26,10 +26,6 @@ public class Property implements Space {
 		return position;
 	}
 	
-	public int getOwnedBy() {
-		return ownedBy;
-	}
-	
 	public void setOwnedBy(int n) {
 		ownedBy = n;
 	}
@@ -45,5 +41,12 @@ public class Property implements Space {
 		// TODO Auto-generated method stub
 		
 	}
+
+	public int getOwnedBy() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	
 
 }
