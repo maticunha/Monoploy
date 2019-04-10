@@ -14,8 +14,8 @@ public class Player implements Die, Board {
 	int doublesCounter = 0;
 	boolean inJail = false;
 	boolean broke = false;
-	static int currentID = 0;
-	static Player currentPlayer = Board.players[0];
+	public static int currentID = 0;
+	public static Player currentPlayer;
 	
 	Player(String name,int value, int ID, int position, boolean inJail){
 		this.name = name;
@@ -23,6 +23,7 @@ public class Player implements Die, Board {
 		this.position = position;
 		this.ID = ID;
 		inJail = false;
+		
 	}
 	
 	public String getName() {
@@ -37,11 +38,11 @@ public class Player implements Die, Board {
 	}
 	
 	public static Player getCurrentPlayer() {
-		return players[currentID];
+		return App.players[currentID];
 	}
 	
 	public static void setCurrentPlayer() {
-		currentPlayer = Board.players[(currentID + 1) % 3];
+		currentPlayer = App.players[(currentID + 1) % 3];
 	}
 	public static int getCurrentID() {
 		return currentID;
@@ -66,7 +67,7 @@ public class Player implements Die, Board {
 	public int nextPlayer() {
 		 return (getID() + 1) % 3 == 0? 1 : getID() + 1;
 	}
-
+	
 	@Override
 	public int rollDie() {
 		Random roll = new Random();	
@@ -102,7 +103,7 @@ public class Player implements Die, Board {
 		
 		if (current.broke) {
 			setCurrentPlayer();
-			doTurn(getCurrentPlayer());
+			
 		}
 		else if (inJail) {
 
@@ -138,11 +139,11 @@ public class Player implements Die, Board {
 				}
 			}
 			
-			if (spaceArr[position] instanceof  Property) {
+			if (App.spaceArr[position] instanceof  Property) {
 
 				
 
-				if((((Property) spaceArr[position]).getOwnedBy()) == current.getID()) {
+				if((((Property) App.spaceArr[position]).getOwnedBy()) == current.getID()) {
 
 					/**
 					 * Code to say you already own this, end turn					
@@ -150,7 +151,7 @@ public class Player implements Die, Board {
 					
 				}
 				
-				else if(((Property) spaceArr[position]).getOwnedBy()  == 0) {
+				else if(((Property) App.spaceArr[position]).getOwnedBy()  == 0) {
 					/**
 					 * Code to ask if the user wants to buy this
 					 * end turn
@@ -158,14 +159,14 @@ public class Player implements Die, Board {
 				} 
 				
 				else {
-					int owner = ((Property) spaceArr[position]).getOwnedBy();
-					int value = spaceArr[position].getValue();
+					int owner = ((Property) App.spaceArr[position]).getOwnedBy();
+					int value = App.spaceArr[position].getValue();
 					
 
 					current.setValue(-value / 10);
 				current.setValue(-value / 10);
 
-					setValue(players[owner], value / 10);
+					setValue(App.players[owner], value / 10);
 					/**
 					 * Code to say the user owed other player money
 					 * end turn
@@ -173,12 +174,12 @@ public class Player implements Die, Board {
 					if (current.getValue() < 0) {
 						broke = true;
 						setCurrentPlayer();
-						doTurn(getCurrentPlayer());
+						
 					}
 				}
 				
 			}
-			else if (spaceArr[position] instanceof Jail) {
+			else if (App.spaceArr[position] instanceof Jail) {
 				/** 
 				 * Code to say user is visiting Jail
 				 * End turn
@@ -186,20 +187,20 @@ public class Player implements Die, Board {
 				
 			}
 			
-			else if (spaceArr[position] instanceof Event) {
+			else if (App.spaceArr[position] instanceof Event) {
 				
-				if(spaceArr[position].getName() == "Community Chest" || spaceArr[position].getName() == "Chance") {
-					String result = ((Event) spaceArr[position]).getEvent();
+				if(App.spaceArr[position].getName() == "Community Chest" || App.spaceArr[position].getName() == "Chance") {
+					String result = ((Event) App.spaceArr[position]).getEvent();
 					/**
 					 * Code to output result
 					 */
-					if (((Event) spaceArr[position]).getGoodOrBad() == 1) {
+					if (((Event) App.spaceArr[position]).getGoodOrBad() == 1) {
 						current.setValue(-50);
 						
 						if (current.getValue() < 0) {
 							broke = true;
 							setCurrentPlayer();
-							doTurn(getCurrentPlayer());
+						
 						}
 
 						current.setValue(-50);
@@ -215,7 +216,7 @@ public class Player implements Die, Board {
 					}
 				} //if for community/chance
 				
-				else if (spaceArr[position].getName() == "Income Tax") {
+				else if (App.spaceArr[position].getName() == "Income Tax") {
 					/**
 					 * Code to say player has to pay tax
 					 */
@@ -226,33 +227,33 @@ public class Player implements Die, Board {
 					if (current.getValue() < 0) {
 						broke = true;
 						setCurrentPlayer();
-						doTurn(getCurrentPlayer());
+						
 					}
 			current.setValue(-200);
 
 				}
 				
-				else if (spaceArr[position].getName() == "Free Parking") {
+				else if (App.spaceArr[position].getName() == "Free Parking") {
 					/**
 					 * Code to say player gets to park for free!
 					 */
 				}
 				
-				else if(spaceArr[position].getName() == "Go To Jail") {
+				else if(App.spaceArr[position].getName() == "Go To Jail") {
 					inJail = true;
 					/**
 					 * Code to send player to jail
 					 * Code to display that the player is in jail
 					 */
 					setCurrentPlayer();
-					doTurn(getCurrentPlayer());
+					
 				}
 				
 				
 			}
 			
 			if (doublesCounter == 1 || doublesCounter == 2) {
-				doTurn(getCurrentPlayer());
+				
 			}
 			
 			else if (doublesCounter == 3) {
@@ -263,11 +264,11 @@ public class Player implements Die, Board {
 				 */
 				
 				setCurrentPlayer();
-				doTurn(getCurrentPlayer());
+				
 			}
 			else {
 				setCurrentPlayer();
-				doTurn(getCurrentPlayer());
+				
 			}
 		}
 		}

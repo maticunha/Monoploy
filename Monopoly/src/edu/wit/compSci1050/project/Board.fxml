@@ -250,12 +250,11 @@
             <Image url="@Board%20Pictures/microsoft-windows-10-icon-logo-vector.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="75.0" fitWidth="116.0" layoutX="633.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="CPlus" fitHeight="75.0" fitWidth="116.0" layoutX="633.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Board%20Pictures/cpp_logo.png" />
          </image>
       </ImageView>
-      <VBox fx:id="CPlus" layoutX="627.0" layoutY="5.0" prefHeight="103.0" prefWidth="79.0" />
       <ImageView fx:id="PHP" fitHeight="86.0" fitWidth="76.0" layoutX="146.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Board%20Pictures/php_PNG7.png" />
@@ -281,12 +280,11 @@
             <Image url="@Board%20Pictures/python-logo.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="68.0" fitWidth="60.0" layoutX="9.0" layoutY="546.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
+      <ImageView fx:id="JSON" fitHeight="68.0" fitWidth="60.0" layoutX="9.0" layoutY="546.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
          <image>
             <Image url="@Board%20Pictures/json-logo.png" />
          </image>
       </ImageView>
-      <VBox fx:id="JSON" layoutX="-3.0" layoutY="535.0" prefHeight="79.0" prefWidth="98.0" />
       <ImageView fx:id="Ruby" fitHeight="75.0" fitWidth="71.0" layoutX="24.0" layoutY="781.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
          <image>
             <Image url="@Board%20Pictures/ruby02.png" />
