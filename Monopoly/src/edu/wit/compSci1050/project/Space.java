@@ -1,5 +1,7 @@
 package edu.wit.compSci1050.project;
-//comments
+
+
+//Extension of Board, does the same thing as board basically.
 public interface Space extends Board {
 
 	public String getName();

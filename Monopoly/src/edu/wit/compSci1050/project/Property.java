@@ -1,5 +1,7 @@
 package edu.wit.compSci1050.project;
-//comments
+
+
+//Simple method to keep track of each property
 public class Property implements Space {
 	int ownedBy;
 	String name;
@@ -43,6 +45,12 @@ public class Property implements Space {
 	}
 
 	public int getOwnedBy() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int rollDie() {
 		// TODO Auto-generated method stub
 		return 0;
 	}

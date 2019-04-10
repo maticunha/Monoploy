@@ -31,13 +31,15 @@ public class App extends Application implements Initializable {
 	public static String player2_name = "Player 2";
 	public static String player3_name = "Player 3";
 	
+	
+	//All of the player created
 	public static Player[] players = {
 			new Player(App.player1_name, 5000, 0, 0, false),
 			new Player(App.player2_name, 5000, 0, 1, false),
 			new Player(App.player3_name, 5000, 0, 2, false),
 		};
 
-		
+	//All the spaces created
 	public static  Space[] spaceArr = {
 			new Event("Go", 0),
 			new Property("Assembly", 50, 1),
@@ -81,7 +83,7 @@ public class App extends Application implements Initializable {
 			new Property("Obj-C", 280, 39)
 		};
 	
-	//This is where the text for the log is initialized. 
+	//Everything in the XFML created
 	@FXML
 	public  TextField DiceResult; 
 	
@@ -225,6 +227,7 @@ public class App extends Application implements Initializable {
 	@FXML
 	public  static ImageView OBJC; 
 	
+	//Putting them in an array to help in moving
 	public static ImageView[] spaces = { 
 		Go, Assembly, CommunityChest, Perl, JavaScript, Question, HTML5, Tax, Java, 
 		Scratch, Jail, Ruby, Scala, JSON, Question2, Python, VB, FireFox, OpenGL, 
@@ -233,6 +236,7 @@ public class App extends Application implements Initializable {
 		Swift, CommunityChest3, CSharp, OBJC
 	};
 	
+	//Player pieces
 	public static ImageView[] pieces = {
 		Player1, Player2, Player3	
 	};
@@ -260,181 +264,15 @@ public class App extends Application implements Initializable {
 
 				@Override
 				public void handle(ActionEvent arg0) {
-					if (Player.currentPlayer.broke) {
-						Player.setCurrentPlayer();
-						
-					}
-					else if (Player.currentPlayer.inJail) {
-
-						Player.currentPlayer.doJail();
-					}
-					else {
-						int roll1 = Player.currentPlayer.rollDie();
-						int roll2 = Player.currentPlayer.rollDie();
-						if (roll1 == roll2) {
-							++Player.currentPlayer.doublesCounter;
-							++Player.currentPlayer.doublesCounter;
-
-						}
-						
-						int totalRoll = roll1 + roll2;
-						String rollResult = String.format("%s rolled a %d!", Player.currentPlayer.getName(), totalRoll);
-						
-						
-						for (int i = 0; i <= totalRoll; i++) {
-							App.pieces[Player.getCurrentID()].setX(App.spaces[Player.currentPlayer.position].getX());
-							App.pieces[Player.getCurrentID()].setY(App.spaces[Player.currentPlayer.position].getY());
-							Player.currentPlayer.lastPosition = Player.currentPlayer.position;
-							Player.currentPlayer.position += 1 % 40;
-							if(Player.currentPlayer.lastPosition > Player.currentPlayer.position) {
-
-								Player.currentPlayer.setValue(200);
-								/** 
-								 * Code to say "pass go, collect $200
-								 */
-							}
-						}
-						
-						if (App.spaceArr[Player.currentPlayer.position] instanceof  Property) {
-
-							
-
-							if((((Property) App.spaceArr[Player.currentPlayer.position]).getOwnedBy()) == Player.currentPlayer.getID()) {
-
-								/**
-								 * Code to say you already own this, end turn					
-								 */
-								
-							}
-							
-							else if(((Property) App.spaceArr[Player.currentPlayer.position]).getOwnedBy()  == 0) {
-								/**
-								 * Code to ask if the user wants to buy this
-								 * end turn
-								 */
-							} 
-							
-							else {
-								int owner = ((Property) App.spaceArr[Player.currentPlayer.position]).getOwnedBy();
-								int value = App.spaceArr[Player.currentPlayer.position].getValue();
-								
-
-								Player.currentPlayer.setValue(-value / 10);
-								Player.currentPlayer.setValue(-value / 10);
-
-								Player.currentPlayer.setValue(App.players[owner], value / 10);
-								/**
-								 * Code to say the user owed other player money
-								 * end turn
-								 */
-								if (Player.currentPlayer.getValue() < 0) {
-									Player.currentPlayer.broke = true;
-									Player.setCurrentPlayer();
-									
-								}
-							}
-							
-						}
-						else if (App.spaceArr[Player.currentPlayer.position] instanceof Jail) {
-							/** 
-							 * Code to say user is visiting Jail
-							 * End turn
-							 */
-							
-						}
-						
-						else if (App.spaceArr[Player.currentPlayer.position] instanceof Event) {
-							
-							if(App.spaceArr[Player.currentPlayer.position].getName() == "Community Chest" || App.spaceArr[Player.currentPlayer.position].getName() == "Chance") {
-								String result = ((Event) App.spaceArr[Player.currentPlayer.position]).getEvent();
-								/**
-								 * Code to output result
-								 */
-								if (((Event) App.spaceArr[Player.currentPlayer.position]).getGoodOrBad() == 1) {
-									Player.currentPlayer.setValue(-50);
-									
-									if (Player.currentPlayer.getValue() < 0) {
-										Player.currentPlayer.broke = true;
-										Player.setCurrentPlayer();
-									
-									}
-
-									Player.currentPlayer.setValue(-50);
-
-								}
-								
-								else {
-
-									Player.currentPlayer.setValue(50);
-
-									Player.currentPlayer.setValue(50);
-
-								}
-							} //if for community/chance
-							
-							else if (App.spaceArr[Player.currentPlayer.position].getName() == "Income Tax") {
-								/**
-								 * Code to say player has to pay tax
-								 */
-								
-
-								Player.currentPlayer.setValue(-200);
-								
-								if (Player.currentPlayer.getValue() < 0) {
-									Player.currentPlayer.broke = true;
-									Player.setCurrentPlayer();
-									
-								}
-								Player.currentPlayer.setValue(-200);
-
-							}
-							
-							else if (App.spaceArr[Player.currentPlayer.position].getName() == "Free Parking") {
-								/**
-								 * Code to say player gets to park for free!
-								 */
-							}
-							
-							else if(App.spaceArr[Player.currentPlayer.position].getName() == "Go To Jail") {
-								Player.currentPlayer.inJail = true;
-								/**
-								 * Code to send player to jail
-								 * Code to display that the player is in jail
-								 */
-								Player.setCurrentPlayer();
-								
-							}
-							
-							
-						}
-						
-						if (Player.currentPlayer.doublesCounter == 1 || Player.currentPlayer.doublesCounter == 2) {
-							
-						}
-						
-						else if (Player.currentPlayer.doublesCounter == 3) {
-							Player.currentPlayer.inJail = true;
-							/**
-							 * Code to say player is in Jail
-							 * Move player to jail
-							 */
-							
-							Player.setCurrentPlayer();
-							
-						}
-						else {
-							Player.currentPlayer.doublesCounter = 0;
-							Player.setCurrentPlayer();
-							
-						}
-					}
-					}
+					Player.currentPlayer.doTurn(Player.currentPlayer);
 					
+				}
+
 				
-				
-			});
-		}
+		});
 				
 	}
+	
+}
 
 

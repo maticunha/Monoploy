@@ -2,7 +2,7 @@ package edu.wit.compSci1050.project;
 //comments
 public interface Board {
 
-	//comment to push
+	//Interface that has methods that will be used by all sub-classes
 
 	
 	public String getName();

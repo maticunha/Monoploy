@@ -52,6 +52,7 @@ public class Event implements Space {
 		return goodOrBad;
 	}
 	
+	//Will randomly choose a good or bad Event, and then give the string to print
 	public String getEvent() {
 		setGoodOrBad();
 		int type = getGoodOrBad();
@@ -99,6 +100,12 @@ public class Event implements Space {
 
 	@Override
 	public int getOwnedBy() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int rollDie() {
 		// TODO Auto-generated method stub
 		return 0;
 	}

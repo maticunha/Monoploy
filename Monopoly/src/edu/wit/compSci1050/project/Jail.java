@@ -65,4 +65,10 @@ public class Jail implements Space {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+	@Override
+	public int rollDie() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

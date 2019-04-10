@@ -100,15 +100,13 @@ public class Player implements Die, Board {
 	
 
 	public void doTurn(Player current) {
-		
+		//checks if player has negative money
 		if (current.broke) {
 			setCurrentPlayer();
 			
 		}
+		//checks to see if player is in jail
 		else if (inJail) {
-
-	
-		if (inJail) {
 
 			doJail();
 		}
@@ -117,13 +115,16 @@ public class Player implements Die, Board {
 			int roll2 = rollDie();
 			if (roll1 == roll2) {
 				++current.doublesCounter;
-				++current.doublesCounter;
+				
 
 			}
 			
 			int totalRoll = roll1 + roll2;
 			String rollResult = String.format("%s rolled a %d!", current.getName(), totalRoll);
 			
+			/**
+			 * These lines don't work. We can't move the player for some reason.
+			 */
 			
 			for (int i = 0; i <= totalRoll; i++) {
 				App.pieces[getCurrentID()].setX(App.spaces[position].getX());
@@ -139,6 +140,7 @@ public class Player implements Die, Board {
 				}
 			}
 			
+			//checks to see if the space landed on is a Property
 			if (App.spaceArr[position] instanceof  Property) {
 
 				
@@ -179,6 +181,8 @@ public class Player implements Die, Board {
 				}
 				
 			}
+			
+			//Check to see if the player is on the Jail space
 			else if (App.spaceArr[position] instanceof Jail) {
 				/** 
 				 * Code to say user is visiting Jail
@@ -187,6 +191,8 @@ public class Player implements Die, Board {
 				
 			}
 			
+			//Checks to see if the player is on an Event space
+			//Will then use the space name to decide what to do.  
 			else if (App.spaceArr[position] instanceof Event) {
 				
 				if(App.spaceArr[position].getName() == "Community Chest" || App.spaceArr[position].getName() == "Chance") {
@@ -271,11 +277,12 @@ public class Player implements Die, Board {
 				
 			}
 		}
-		}
 	}
 	
 	
 	
+	//Describes what the player will do in jail,
+	//And give the player the option to roll or pay to get out.
 	public void doJail() {
 		boolean tryRoll = false;
 		boolean pay = false;
