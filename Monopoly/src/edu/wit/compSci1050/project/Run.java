@@ -16,9 +16,11 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.DialogPane;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 
@@ -41,7 +43,7 @@ public class Run extends Application implements Initializable {
 	static ScrollPane GameLog; 
 	
 	@FXML
-	static TextFlow Log; 
+	static Text Log; 
 	
 	@FXML
 	static ImageView Player1; 
@@ -181,6 +183,7 @@ public class Run extends Application implements Initializable {
 	};
 	
 	public static void main (String[] args) {
+		Log.setText("Example");
 		launch(args);
 	}
 
@@ -192,7 +195,7 @@ public class Run extends Application implements Initializable {
 		arg0.setTitle("Monopoly Computer Science Edition");
 		arg0.setScene(scene);
 		arg0.show();
-		Log.add("Welcome to Monopoly Computer Science Edition!");
+		Log.setText("Example");
 
 		
 			}
@@ -203,13 +206,9 @@ public class Run extends Application implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
-		Roll.setOnAction(new EventHandler<ActionEvent>(){
-			
-			public void handle(ActionEvent event) {
-				Board.players[Player.currentID].doTurn(Board.players[Player.currentID]);
-			}
-		});
+		
+		}
 				
 	}
 
-}
+
