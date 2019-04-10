@@ -19,6 +19,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 
 public class Run extends Application implements Initializable {
@@ -34,13 +35,13 @@ public class Run extends Application implements Initializable {
 	
 	
 	@FXML
-	Button Roll; 
+	static Button Roll; 
 	
 	@FXML
-	ScrollPane GameLog; 
+	static ScrollPane GameLog; 
 	
 	@FXML
-	TextField Log; 
+	static TextFlow Log; 
 	
 	@FXML
 	static ImageView Player1; 
@@ -191,7 +192,10 @@ public class Run extends Application implements Initializable {
 		arg0.setTitle("Monopoly Computer Science Edition");
 		arg0.setScene(scene);
 		arg0.show();
-	}
+		Log.add("Welcome to Monopoly Computer Science Edition!");
+
+		
+			}
 
 		
 	
@@ -205,7 +209,7 @@ public class Run extends Application implements Initializable {
 				Board.players[Player.currentID].doTurn(Board.players[Player.currentID]);
 			}
 		});
-		
+				
 	}
 
 }
