@@ -100,132 +100,134 @@ public class App extends Application implements Initializable {
 	public Text Log; 
 	
 	@FXML
-	public static  ImageView Player1; 
+	public static  ImageView Player1 = new ImageView(); 
 	
 	@FXML
-	public static  ImageView Player2; 
+	public static  ImageView Player2 = new ImageView(); 
 	
 	@FXML
-	public  static  ImageView Player3; 
+	public  static  ImageView Player3 = new ImageView(); 
 	
 	@FXML 
-	public  static ImageView Go;
+	public  static ImageView Go = new ImageView();
+	
 	
 	@FXML 
-	public  static ImageView Assembly; 
+	public  static ImageView Assembly = new ImageView(); 
 	
 	@FXML
-	public  static ImageView CommunityChest;
+	public  static ImageView CommunityChest= new ImageView();
 	
 	@FXML
-	public  static ImageView CommunityChest2; 
+	public  static ImageView CommunityChest2= new ImageView(); 
 	
 	@FXML
-	public  static ImageView CommunityChest3; 
+	public  static ImageView CommunityChest3= new ImageView();
 	
 	@FXML
-	public  static ImageView Perl;
+	public  static ImageView Perl= new ImageView();
 	
 	@FXML
-	public  static ImageView JavaScript; 
+	public  static ImageView JavaScript= new ImageView(); 
 	
 	@FXML
-	public  static ImageView Question;
+	public  static ImageView Question= new ImageView();
 	
 	@FXML
-	public  static ImageView Question2; 
+	public  static ImageView Question2= new ImageView();
 	
 	@FXML
-	public  static ImageView Question3;
+	public  static ImageView Question3= new ImageView();
 	
 	@FXML
-	public  static ImageView Question4; 
+	public  static ImageView Question4= new ImageView();
 	
 	@FXML
-	public  static ImageView HTML5; 
+	public  static ImageView HTML5= new ImageView(); 
 	
 	@FXML
-	public  static ImageView Tax;
+	public  static ImageView Tax= new ImageView();
 	
 	@FXML
-	public  static ImageView Java; 
+	public  static ImageView Java= new ImageView();
 	
 	@FXML
-	public  static ImageView Scratch;
+	public  static ImageView Scratch= new ImageView();
 	
 	@FXML
-	public  static ImageView Jail;
+	public  static ImageView Jail= new ImageView();
 	
 	@FXML
-	public  static ImageView Ruby; 
+	public  static ImageView Ruby= new ImageView();
 	
 	@FXML
-	public  static ImageView Chrome;
+	public  static ImageView Chrome= new ImageView();
 	
 	@FXML
-	public  static ImageView Scala;
+	public  static ImageView Scala= new ImageView();
 	
 	@FXML
-	public  static ImageView JSON;
+	public  static ImageView JSON= new ImageView();
 	
 	@FXML
-	public  static ImageView Python; 
+	public  static ImageView Python= new ImageView();
 	
 	@FXML
-	public  static ImageView VB; 
+	public  static ImageView VB= new ImageView();
 	
 	@FXML
-	public  static ImageView FireFox;
+	public  static ImageView FireFox= new ImageView();
 	
 	@FXML
-	public  static ImageView OpenGL;
+	public  static ImageView OpenGL= new ImageView();
 	
 	@FXML
-	public  static ImageView FreeParking; 
+	public  static ImageView FreeParking= new ImageView(); 
 	
 	@FXML
-	public  static ImageView PHP;
+	public  static ImageView PHP= new ImageView();
 	
 	@FXML
-	public  static ImageView Lua; 
+	public  static ImageView Lua= new ImageView(); 
 	
 	@FXML
-	public  static ImageView InternetExplorer; 
+	public  static ImageView InternetExplorer= new ImageView(); 
 	
 	@FXML
-	public  static ImageView R; 
+	public  static ImageView R= new ImageView(); 
 	
 
 	
 	@FXML
-	public  static ImageView Windows; 
+	public  static ImageView Windows= new ImageView();
 	
 	@FXML
-	public  static ImageView PowerShell; 
+	public  static ImageView PowerShell= new ImageView();
 	
 	@FXML
-	public  static ImageView GoToJail;
+	public  static ImageView GoToJail= new ImageView();
 	
 	@FXML
-	public  static ImageView MATLAB; 
+	public  static ImageView MATLAB= new ImageView();
 	
 	@FXML
-	public  static ImageView Razer; 
+	public  static ImageView Razer= new ImageView();
 	
 	@FXML
-	public  static ImageView Delphi; 
+	public  static ImageView Delphi= new ImageView(); 
 	
 	@FXML
-	public  static ImageView Eclipse; 
+	public  static ImageView Eclipse= new ImageView(); 
 	
 	@FXML
-	public  static ImageView Swift; 
+	public  static ImageView Swift= new ImageView();
 	
 	@FXML
-	public  static ImageView CSharp; 
+	public  static ImageView CSharp= new ImageView(); 
 	
 	@FXML
-	public  static ImageView OBJC; 
+	public  static ImageView OBJC= new ImageView(); 
+	
 	
 	//Putting them in an array to help in moving
 	public static ImageView[] spaces = { 
