@@ -121,16 +121,16 @@ public class Player implements Die, Board {
 			}
 			
 			int totalRoll = roll1 + roll2;
+			String rollResult = String.format("%s rolled a %d!", current.getName(), totalRoll);
+			
 			
 			for (int i = 0; i <= totalRoll; i++) {
-
+				App.pieces[getCurrentID()].setX(App.spaces[position].getX());
+				App.pieces[getCurrentID()].setY(App.spaces[position].getY());
 				current.lastPosition = current.position;
 				current.position += 1 % 40;
 				if(current.lastPosition > current.position) {
 
-				current.lastPosition = current.position;
-				current.position += 1 % 40;
-				if(current.lastPosition > current.position) {
 					setValue(200);
 					/** 
 					 * Code to say "pass go, collect $200
@@ -140,7 +140,7 @@ public class Player implements Die, Board {
 			
 			if (spaceArr[position] instanceof  Property) {
 
-				if((((Property) spaceArr[position]).getOwnedBy()) == current.getID()) {
+				
 
 				if((((Property) spaceArr[position]).getOwnedBy()) == current.getID()) {
 
@@ -252,7 +252,6 @@ public class Player implements Die, Board {
 			}
 			
 			if (doublesCounter == 1 || doublesCounter == 2) {
-				setCurrentPlayer();
 				doTurn(getCurrentPlayer());
 			}
 			
@@ -272,9 +271,9 @@ public class Player implements Die, Board {
 			}
 		}
 		}
-		}
-		}
 	}
+	
+	
 	
 	public void doJail() {
 		boolean tryRoll = false;

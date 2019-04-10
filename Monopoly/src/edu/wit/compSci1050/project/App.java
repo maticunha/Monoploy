@@ -15,6 +15,7 @@ import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.DialogPane;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -24,7 +25,7 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 
-public class Run extends Application implements Initializable {
+public class App extends Application implements Initializable {
 	public static String player1_name = "Player 1";
 	public static String player2_name = "Player 2";
 	public static String player3_name = "Player 3";
@@ -33,146 +34,146 @@ public class Run extends Application implements Initializable {
 	
 	//This is where the text for the log is initialized. 
 	@FXML
-	TextField DiceResult; 
+	public static TextField DiceResult; 
 	
 	
 	@FXML
-	static Button Roll; 
+	public static Button Roll; 
 	
 	@FXML
-	static ScrollPane GameLog; 
+	public static ScrollPane GameLog; 
 	
 	@FXML
-	static Text Log; 
+	public Text Log; 
 	
 	@FXML
-	static ImageView Player1; 
+	public static ImageView Player1; 
 	
 	@FXML
-	static ImageView Player2; 
+	public static ImageView Player2; 
 	
 	@FXML
-	static ImageView Player3; 
+	public static ImageView Player3; 
 	
 	@FXML 
-	static ImageView Go;
+	public static ImageView Go;
 	
 	@FXML 
-	static ImageView Assembly; 
+	public static ImageView Assembly; 
 	
 	@FXML
-	static ImageView CommunityChest;
+	public static ImageView CommunityChest;
 	
 	@FXML
-	static ImageView CommunityChest2; 
+	public static ImageView CommunityChest2; 
 	
 	@FXML
-	static ImageView CommunityChest3; 
+	public static ImageView CommunityChest3; 
 	
 	@FXML
-	static ImageView Perl;
+	public static ImageView Perl;
 	
 	@FXML
-	static ImageView JavaScript; 
+	public static ImageView JavaScript; 
 	
 	@FXML
-	static ImageView Question;
+	public static ImageView Question;
 	
 	@FXML
-	static ImageView Question2; 
+	public static ImageView Question2; 
 	
 	@FXML
-	static ImageView Question3;
+	public static ImageView Question3;
 	
 	@FXML
-	static ImageView Question4; 
+	public static ImageView Question4; 
 	
 	@FXML
-	static ImageView HTML5; 
+	public static ImageView HTML5; 
 	
 	@FXML
-	static ImageView Tax;
+	public static ImageView Tax;
 	
 	@FXML
-	static ImageView Java; 
+	public static ImageView Java; 
 	
 	@FXML
-	static ImageView Scratch;
+	public static ImageView Scratch;
 	
 	@FXML
-	static ImageView Jail;
+	public static ImageView Jail;
 	
 	@FXML
-	static ImageView Ruby; 
+	public static ImageView Ruby; 
 	
 	@FXML
-	static ImageView Chrome;
+	public static ImageView Chrome;
 	
 	@FXML
-	static ImageView Scala;
+	public static ImageView Scala;
 	
 	@FXML
-	static ImageView JSON;
+	public static ImageView JSON;
 	
 	@FXML
-	static ImageView Python; 
+	public static ImageView Python; 
 	
 	@FXML
-	static ImageView VB; 
+	public static ImageView VB; 
 	
 	@FXML
-	static ImageView FireFox;
+	public static ImageView FireFox;
 	
 	@FXML
-	static ImageView OpenGL;
+	public static ImageView OpenGL;
 	
 	@FXML
-	static ImageView FreeParking; 
+	public static ImageView FreeParking; 
 	
 	@FXML
-	static ImageView PHP;
+	public static ImageView PHP;
 	
 	@FXML
-	static ImageView Lua; 
+	public static ImageView Lua; 
 	
 	@FXML
-	static ImageView InternetExplorer; 
+	public static ImageView InternetExplorer; 
 	
 	@FXML
-	static ImageView R; 
+	public static ImageView R; 
 	
 	@FXML
-	static ImageView CPlus;
+	public static ImageView CPlus;
 	
 	@FXML
-	static ImageView Windows; 
+	public static ImageView Windows; 
 	
 	@FXML
-	static ImageView PowerShell; 
+	public static ImageView PowerShell; 
 	
 	@FXML
-	static ImageView GoToJail;
+	public static ImageView GoToJail;
 	
 	@FXML
-	static ImageView MATLAB; 
+	public static ImageView MATLAB; 
 	
 	@FXML
-	static ImageView Razer; 
+	public static ImageView Razer; 
 	
 	@FXML
-	static ImageView Delphi; 
+	public static ImageView Delphi; 
 	
 	@FXML
-	static ImageView Eclipse; 
+	public static ImageView Eclipse; 
 	
 	@FXML
-	static ImageView Swift; 
+	public static ImageView Swift; 
 	
 	@FXML
-	static ImageView CSharp; 
+	public static ImageView CSharp; 
 	
 	@FXML
-	static ImageView OBJC; 
+	public static ImageView OBJC; 
 	
 	public static ImageView[] spaces = { 
 		Go, Assembly, CommunityChest, Perl, JavaScript, Question, HTML5, Tax, Java, 
@@ -182,32 +183,29 @@ public class Run extends Application implements Initializable {
 		Swift, CommunityChest3, CSharp, OBJC
 	};
 	
+	public static ImageView[] pieces = {
+		Player1, Player2, Player3	
+	};
+	
 	public static void main (String[] args) {
-		Log.setText("Example");
 		launch(args);
 	}
 
 	@Override
 	public void start(Stage arg0) throws Exception {
-		// TODO Auto-generated method stub
-		Parent root = FXMLLoader.load(getClass().getResource("Board.fxml"));
-		Scene scene = new Scene(root);
+		final FXMLLoader loader = new FXMLLoader(getClass().getResource("Board.fxml"));
+		final Pane p = loader.load();
 		arg0.setTitle("Monopoly Computer Science Edition");
-		arg0.setScene(scene);
+		arg0.setScene(new Scene(p));
 		arg0.show();
-		Log.setText("Example");
-
-		
-			}
+	}
 
 		
 	
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
-		//comment 
-		
+			Log.setText(Log.getText() + " Memes!");
 		}
 				
 	}

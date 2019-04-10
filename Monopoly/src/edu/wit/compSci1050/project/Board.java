@@ -5,9 +5,9 @@ public interface Board {
 	//comment to push
 
 	public static Player[] players = {
-		new Player(Run.player1_name, 5000, 0, 0, false),
-		new Player(Run.player2_name, 5000, 1, 0, false),
-		new Player(Run.player3_name, 5000, 2, 0, false),
+		new Player(App.player1_name, 5000, 0, 0, false),
+		new Player(App.player2_name, 5000, 1, 0, false),
+		new Player(App.player3_name, 5000, 2, 0, false),
 	};
 
 	
