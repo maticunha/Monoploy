@@ -244,7 +244,91 @@ public class App extends Application implements Initializable {
 	};
 	
 	public static void main (String[] args) {
+		
+		Go.setX(867);
+		Go.setY(862);
+		Assembly.setX(788);
+		Assembly.setY(929);
+		CommunityChest.setX(707);
+		CommunityChest.setY(891);
+		Perl.setX(629);
+		Perl.setY(913);
+		JavaScript.setX(540);
+		JavaScript.setY(896);
+		Question.setX(465);
+		Question.setY(857);
+		HTML5.setX(390);
+		HTML5.setY(915); 
+		Tax.setX(310); 
+		Tax.setY(900);
+		Java.setX(226);
+		Java.setY(912);
+		Scratch.setX(146);
+		Scratch.setX(912);
+		Jail.setX(8);
+		Jail.setY(864);
+		Ruby.setX(24);
+		Ruby.setY(781);
+		Chrome.setX(30);
+		Chrome.setY(717);
+		Scala.setX(26);
+		Scala.setY(640);
+		JSON.setX(9);
+		JSON.setY(546);
+		Question2.setX(42);
+		Question2.setY(425);
+		Python.setX(18); 
+		Python.setY(386);
+		VB.setX(21);
+		VB.setY(302);
+		FireFox.setX(19);
+		FireFox.setY(224);
+		OpenGL.setX(25);
+		OpenGL.setY(147); 
+		FreeParking.setX(2);
+		FreeParking.setY(1);
+		PHP.setX(146); 
+		PHP.setY(4);
+		Lua.setX(227);
+		Lua.setY(6);
+		InternetExplorer.setX(315);
+		InternetExplorer.setY(29);
+		R.setX(394);
+		R.setY(25);
+		CommunityChest2.setX(465);
+		CommunityChest2.setY(3);
+		Question3.setX(546);
+		Question3.setY(3);
+		CPlus.setX(633);
+		CPlus.setY(11);
+		Windows.setX(714); 
+		Windows.setY(12);
+		PowerShell.setX(792);
+		PowerShell.setY(6);
+		GoToJail.setX(869);
+		GoToJail.setY(2);
+		MATLAB.setX(905);
+		MATLAB.setY(153);
+		Razer.setX(918);
+		Razer.setY(232);
+		Delphi.setX(900);
+		Delphi.setY(321);
+		Eclipse.setX(917);
+		Eclipse.setY(396);
+		Question4.setX(904);
+		Question4.setY(433);
+		Swift.setX(919);
+		Swift.setY(570); 
+		CommunityChest3.setX(898);
+		CommunityChest3.setY(600);
+		CSharp.setX(916);
+		CSharp.setY(713);
+		OBJC.setX(917); 
+		OBJC.setY(794); 
+		
+		
 		launch(args);
+		
 	}
 
 	@Override
