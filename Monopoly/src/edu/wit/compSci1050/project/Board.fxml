@@ -10,16 +10,17 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wit.compSci1050.project.App">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wit.compSci1050.project.App">
    <children>
       <ImageView fitHeight="1000.0" fitWidth="1000.0" layoutX="2.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
          <image>
             <Image url="@Board%20Pictures/BP3JQOB.jpg" />
          </image>
       </ImageView>
-      <GridPane layoutX="135.0" layoutY="524.0" prefHeight="198.0" prefWidth="331.0">
+      <GridPane layoutX="144.0" layoutY="539.0" prefHeight="75.0" prefWidth="333.0">
         <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -27,7 +28,6 @@
         </columnConstraints>
         <rowConstraints>
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <Label text="           Player 1" />
@@ -184,7 +184,7 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="716.0" prefWidth="387.0">
                <children>
-                  <Text fx:id="Log" layoutX="5.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="376.99999633431435" />
+                  <Text fx:id="Log" layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="113.99999633431435" />
                </children>
             </AnchorPane>
         </content>
@@ -255,20 +255,11 @@
             <Image url="@Board%20Pictures/f04f2fae24473f8150e2dad7d9a008fd.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="142.0" fitWidth="115.0" layoutX="140.0" layoutY="1034.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Player%20Pictures/player1.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="105.0" fitWidth="133.0" layoutX="295.0" layoutY="1017.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Player%20Pictures/player2.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="103.0" fitWidth="123.0" layoutX="482.0" layoutY="1010.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Player%20Pictures/player3.png" />
-         </image>
-      </ImageView>
+      <Text fx:id="Player1_Value" layoutX="184.0" layoutY="662.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="Player2_Value" layoutX="299.0" layoutY="662.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="Player3_Value" layoutX="413.0" layoutY="662.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Circle fill="DODGERBLUE" layoutX="199.0" layoutY="620.0" radius="25.0" stroke="DODGERBLUE" strokeType="INSIDE" />
+      <Circle fill="#ff451f" layoutX="313.0" layoutY="620.0" radius="25.0" stroke="#ff451f" strokeType="INSIDE" />
+      <Circle fill="#ecff1e" layoutX="424.0" layoutY="623.0" radius="25.0" stroke="#ecff1e" strokeType="INSIDE" />
    </children>
 </Pane>
