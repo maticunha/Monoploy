@@ -86,7 +86,6 @@ public class App extends Application implements Initializable {
 	
 	//Everything in the FXML created
 	
-	
 	@FXML
 	public  TextField DiceResult; 
 	
@@ -113,7 +112,6 @@ public class App extends Application implements Initializable {
 	
 	@FXML 
 	public  static ImageView Go = new ImageView();
-	
 	
 	@FXML 
 	public  static ImageView Assembly = new ImageView(); 

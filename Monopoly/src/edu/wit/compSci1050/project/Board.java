@@ -4,7 +4,7 @@ public interface Board {
 
 	//Interface that has methods that will be used by all sub-classes
 
-	
+	//comment to push
 	public String getName();
 	public int getPosition();
 	public void setPosition(int position);
