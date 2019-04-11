@@ -88,7 +88,7 @@ public class App extends Application implements Initializable {
 	public  TextField DiceResult; 
 	
 	@FXML
-	public static ImageView CPlus; 
+	public static ImageView CPlus = new ImageView(); 
 	
 	@FXML
 	public Button Roll; 
@@ -196,8 +196,6 @@ public class App extends Application implements Initializable {
 	@FXML
 	public  static ImageView R= new ImageView(); 
 	
-
-	
 	@FXML
 	public  static ImageView Windows= new ImageView();
 	
@@ -232,7 +230,7 @@ public class App extends Application implements Initializable {
 	//Putting them in an array to help in moving
 	public static ImageView[] spaces = { 
 		Go, Assembly, CommunityChest, Perl, JavaScript, Question, HTML5, Tax, Java, 
-		Scratch, Jail, Ruby, Scala, JSON, Question2, Python, VB, FireFox, OpenGL, 
+		Scratch, Jail, Ruby, Chrome, Scala, JSON, Question2, Python, VB, FireFox, OpenGL, 
 		FreeParking, PHP, Lua, InternetExplorer, R, CommunityChest2, Question3, CPlus, 
 		Windows, PowerShell, GoToJail, MATLAB, Razer, Delphi, Eclipse, Question4, 
 		Swift, CommunityChest3, CSharp, OBJC
@@ -324,8 +322,7 @@ public class App extends Application implements Initializable {
 		CSharp.setX(916);
 		CSharp.setY(713);
 		OBJC.setX(917); 
-		OBJC.setY(794); 
-		
+		OBJC.setY(794);
 		
 		launch(args);
 		
@@ -340,9 +337,6 @@ public class App extends Application implements Initializable {
 		arg0.show();
 	}
 
-		
-	
-
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		Player.currentPlayer=players[0];
@@ -350,15 +344,67 @@ public class App extends Application implements Initializable {
 
 				@Override
 				public void handle(ActionEvent arg0) {
-					Player.currentPlayer.doTurn(Player.currentPlayer);
+					
+					int roll1 = 0;
+					int roll2 = 0;
+					if (Player.currentPlayer.broke) {
+						Player.setCurrentID();
+						Player.setCurrentPlayer();
+						
+					}
+					//checks to see if player is in jail
+					else if (Player.currentPlayer.inJail) {
+
+						Player.currentPlayer.doJail();
+					}
+					else {
+						roll1 = Player.currentPlayer.rollDie();
+						roll2 = Player.currentPlayer.rollDie();
+						if (roll1 == roll2) {
+							++Player.currentPlayer.doublesCounter;
+							
+						}
+					}
+						
+						int totalRoll = roll1 + roll2;
+						String rollResult = String.format("%s rolled a %d!", Player.currentPlayer.getName(), totalRoll);
+						
+						/**
+						 * These lines don't work. We can't move the player for some reason.
+						 */
+							System.out.println("ID: " + Player.currentID); 					 
+						for (int i = 0; i <= totalRoll; i++) {
+							if(Player.currentPlayer.getPosition()>=40) {
+								Player.currentPlayer.position=Player.currentPlayer.position % 40; 
+							}
+							pieces[Player.getCurrentID()].setX(spaces[Player.currentPlayer.position].getX());
+							pieces[Player.getCurrentID()].setY(spaces[Player.currentPlayer.position].getY());
+							Player.currentPlayer.lastPosition = Player.currentPlayer.position;
+							Player.currentPlayer.position += 1;
+							System.out.println(Player.currentPlayer.position);
+							if(Player.currentPlayer.lastPosition > Player.currentPlayer.position) {
+
+								Player.currentPlayer.setValue(200);
+								/** 
+								 * Code to say "pass go, collect $200
+								 */
+							}
+						}
+					Player.setCurrentID();
+					Player.setCurrentPlayer();
+					//Player.currentPlayer.doTurn(Player.currentPlayer);
 					
 				}
 
 				
-		});
 				
-	}
+				
+				
+			
+	});
+
 	
+}
 }
 
 

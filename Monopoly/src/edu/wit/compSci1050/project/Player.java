@@ -42,7 +42,7 @@ public class Player implements Die, Board {
 	}
 	
 	public static void setCurrentPlayer() {
-		currentPlayer = App.players[(currentID + 1) % 3];
+		currentPlayer = App.players[currentID];
 	}
 	public static int getCurrentID() {
 		return currentID;
@@ -83,13 +83,13 @@ public class Player implements Die, Board {
 	@Override
 	public int getPosition() {
 		// TODO Auto-generated method stub
-		return 0;
+		return position; 
 	}
 
 	@Override
 	public void setPosition(int position) {
 		// TODO Auto-generated method stub
-		
+		position += position % 39; 
 	}
 
 	@Override
@@ -101,6 +101,7 @@ public class Player implements Die, Board {
 
 	public void doTurn(Player current) {
 		//checks if player has negative money
+		/**
 		if (current.broke) {
 			setCurrentPlayer();
 			
@@ -125,7 +126,9 @@ public class Player implements Die, Board {
 			/**
 			 * These lines don't work. We can't move the player for some reason.
 			 */
-			
+			/**
+			 * 
+			 
 			for (int i = 0; i <= totalRoll; i++) {
 				App.pieces[getCurrentID()].setX(App.spaces[position].getX());
 				App.pieces[getCurrentID()].setY(App.spaces[position].getY());
@@ -137,8 +140,8 @@ public class Player implements Die, Board {
 					/** 
 					 * Code to say "pass go, collect $200
 					 */
-				}
-			}
+				//}
+			//}
 			
 			//checks to see if the space landed on is a Property
 			if (App.spaceArr[position] instanceof  Property) {
@@ -175,6 +178,7 @@ public class Player implements Die, Board {
 					 */
 					if (current.getValue() < 0) {
 						broke = true;
+						setCurrentID();
 						setCurrentPlayer();
 						
 					}
@@ -205,6 +209,7 @@ public class Player implements Die, Board {
 						
 						if (current.getValue() < 0) {
 							broke = true;
+							setCurrentID(); 
 							setCurrentPlayer();
 						
 						}
@@ -232,6 +237,7 @@ public class Player implements Die, Board {
 					
 					if (current.getValue() < 0) {
 						broke = true;
+						setCurrentID();
 						setCurrentPlayer();
 						
 					}
@@ -251,6 +257,7 @@ public class Player implements Die, Board {
 					 * Code to send player to jail
 					 * Code to display that the player is in jail
 					 */
+					setCurrentID();
 					setCurrentPlayer();
 					
 				}
@@ -268,16 +275,17 @@ public class Player implements Die, Board {
 				 * Code to say player is in Jail
 				 * Move player to jail
 				 */
-				
+				setCurrentID();
 				setCurrentPlayer();
 				
 			}
 			else {
+				setCurrentID();
 				setCurrentPlayer();
 				
 			}
 		}
-	}
+	
 	
 	
 	
@@ -299,6 +307,7 @@ public class Player implements Die, Board {
 			
 			if (this.getValue() < 0) {
 				broke = true;
+				setCurrentID();
 				setCurrentPlayer();
 				doTurn(getCurrentPlayer());
 			}
@@ -340,6 +349,7 @@ public class Player implements Die, Board {
 					
 					if (this.getValue() < 0) {
 						broke = true;
+						setCurrentID();
 						setCurrentPlayer();
 						doTurn(getCurrentPlayer());
 					}
