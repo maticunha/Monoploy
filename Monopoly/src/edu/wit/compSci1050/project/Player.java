@@ -99,7 +99,7 @@ public class Player implements Die, Board {
 	}
 	
 
-	public void doTurn(Player current) {
+	public String doTurn(Player current) {
 		//checks if player has negative money
 		/**
 		if (current.broke) {
@@ -148,19 +148,25 @@ public class Player implements Die, Board {
 
 				
 
-				if((((Property) App.spaceArr[position]).getOwnedBy()) == current.getID()) {
+				if((((Property) App.spaceArr[position]).getOwnedBy()) == currentID) {
 
-					/**
-					 * Code to say you already own this, end turn					
-					 */
+					return("Already own this property, next turn!");
 					
 				}
 				
-				else if(((Property) App.spaceArr[position]).getOwnedBy()  == 0) {
-					/**
-					 * Code to ask if the user wants to buy this
-					 * end turn
-					 */
+				else if(((Property) App.spaceArr[position]).getOwnedBy()  == -1) {
+					int value = App.spaceArr[position].getValue();
+						
+						if  (value > current.getValue()){
+							return ("Not enough money to buy!");
+						}
+						
+						else {
+							((Property) App.spaceArr[position]).setOwnedBy(currentID); 
+							current.setValue(- ((Property) App.spaceArr[position]).getValue());
+							return String.format("%s bought %s for $%d", current.getName(), ((Property) App.spaceArr[position]).getName(), App.spaceArr[position].getValue());
+						}
+					
 				} 
 				
 				else {
@@ -169,17 +175,14 @@ public class Player implements Die, Board {
 					
 
 					current.setValue(-value / 10);
-				current.setValue(-value / 10);
 
 					setValue(App.players[owner], value / 10);
-					/**
-					 * Code to say the user owed other player money
-					 * end turn
-					 */
+					
+					
 					if (current.getValue() < 0) {
-						broke = true;
-						setCurrentID();
-						setCurrentPlayer();
+						current.broke = true;
+						
+						return String.format("%s is Bankrupt!", current.getName());
 						
 					}
 				}
@@ -188,10 +191,7 @@ public class Player implements Die, Board {
 			
 			//Check to see if the player is on the Jail space
 			else if (App.spaceArr[position] instanceof Jail) {
-				/** 
-				 * Code to say user is visiting Jail
-				 * End turn
-				 */
+				return String.format("%s is visiting Jail!", current.getName());
 				
 			}
 			
@@ -207,83 +207,78 @@ public class Player implements Die, Board {
 					if (((Event) App.spaceArr[position]).getGoodOrBad() == 1) {
 						current.setValue(-50);
 						
+						
 						if (current.getValue() < 0) {
 							broke = true;
 							setCurrentID(); 
 							setCurrentPlayer();
-						
+							return String.format("%s's card: %s%n %s is Bankrupt!", current.getName(), result, current.getName());
 						}
 
-						current.setValue(-50);
+						
 
 					}
 					
 					else {
 
 						current.setValue(50);
-
-						current.setValue(50);
-
 					}
+					
+					return String.format("%s's card: %s", current.getName(), result);
 				} //if for community/chance
 				
 				else if (App.spaceArr[position].getName() == "Income Tax") {
-					/**
-					 * Code to say player has to pay tax
-					 */
+					
+					
 					
 
 					current.setValue(-200);
 					
 					if (current.getValue() < 0) {
 						broke = true;
-						setCurrentID();
-						setCurrentPlayer();
+						return String.format("%s paid $200 in income tax.%n %s is bankrupt!", current.getName(), current.getName());
 						
 					}
-			current.setValue(-200);
+					return String.format("%s paid $200 in income tax.", current.getName());
 
 				}
 				
 				else if (App.spaceArr[position].getName() == "Free Parking") {
-					/**
-					 * Code to say player gets to park for free!
-					 */
+					
+					return String.format("%s parked for free!", current.getName());
 				}
 				
 				else if(App.spaceArr[position].getName() == "Go To Jail") {
 					inJail = true;
-					/**
-					 * Code to send player to jail
-					 * Code to display that the player is in jail
-					 */
-					setCurrentID();
-					setCurrentPlayer();
+					return String.format("%s is in jail!", current.getName());
+					
 					
 				}
 				
 				
 			}
 			
-			if (doublesCounter == 1 || doublesCounter == 2) {
-				
-			}
+//			if (doublesCounter == 1 || doublesCounter == 2) {
+//				
+//			}
+//			
+//			else if (doublesCounter == 3) {
+//				inJail = true;
+//				/**
+//				 * Code to say player is in Jail
+//				 * Move player to jail
+//				 */
+//				setCurrentID();
+//				setCurrentPlayer();
+//				
+//			}
+//			else {
+//				setCurrentID();
+//				setCurrentPlayer();
+//				
+//			}
 			
-			else if (doublesCounter == 3) {
-				inJail = true;
-				/**
-				 * Code to say player is in Jail
-				 * Move player to jail
-				 */
-				setCurrentID();
-				setCurrentPlayer();
-				
-			}
-			else {
-				setCurrentID();
-				setCurrentPlayer();
-				
-			}
+			return "";
 		}
 	
 	

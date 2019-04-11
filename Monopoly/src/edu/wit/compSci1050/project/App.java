@@ -10,21 +10,14 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.chart.BarChart;
 import javafx.scene.control.Button;
-import javafx.scene.control.DialogPane;
-import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
-import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
-import javafx.scene.layout.VBox;
 import javafx.scene.shape.Circle; 
 
 public class App extends Application implements Initializable {
@@ -43,45 +36,45 @@ public class App extends Application implements Initializable {
 	//All the spaces created
 	public static  Space[] spaceArr = {
 			new Event("Go", 0),
-			new Property("Assembly", 50, 1),
+			new Property("Assembly", 1, 50),
 			new Event("Community Chest", 2),
-			new Property("Perl", 50, 3),
-			new Property("JavaScript", 60, 4),
+			new Property("Perl", 3, 50),
+			new Property("JavaScript", 4, 60),
 			new Event("Chance", 5),
-			new Property("HTML5", 80, 6),
+			new Property("HTML5", 6, 80),
 			new Event("Income Tax", 7),
 			new Property("Java", 80, 8),
-			new Property("Scratch", 90, 9),
+			new Property("Scratch", 9, 90),
 			new Jail("Jail", 10),
-			new Property("Ruby", 125, 11),
-			new Property("Chrome", 200, 12),
-			new Property("Scala", 125, 13),
-			new Property("JSon", 135, 14),
+			new Property("Ruby", 11, 125),
+			new Property("Chrome", 12, 200),
+			new Property("Scala", 13, 125),
+			new Property("JSon", 14, 135),
 			new Event("Chance", 15),
-			new Property("Python", 150, 16),
+			new Property("Python", 16, 150),
 			new Property("VB", 150, 17),
-			new Property("Firefox", 200, 18),
-			new Property("OpenGL", 160, 19),
+			new Property("Firefox", 18, 200),
+			new Property("OpenGL", 19, 160),
 			new Event("Free Parking", 20),
-			new Property("PHP", 180, 21),
-			new Property("Lua", 180, 22),
-			new Property("Internet Explorer", 200, 23),
-			new Property("R", 200, 24),
+			new Property("PHP", 21, 180),
+			new Property("Lua", 22, 180),
+			new Property("Internet Explorer", 23, 200),
+			new Property("R", 24, 200),
 			new Event("Community Chest", 25),
 			new Event("Chance", 26),
-			new Property("C++", 215, 27),
-			new Property("Windows", 200, 28),
-			new Property("PowerShell", 220, 29),
+			new Property("C++", 27, 215),
+			new Property("Windows", 28, 200),
+			new Property("PowerShell", 29, 220),
 			new Event("Go To Jail", 30),
-			new Property("Matlab", 240, 31),
-			new Property("Razer", 200, 32),
-			new Property("Delphi", 240, 33),
-			new Property("Eclipse", 200, 34),
+			new Property("Matlab", 31, 240),
+			new Property("Razer", 32, 200),
+			new Property("Delphi", 33, 240),
+			new Property("Eclipse", 34, 200),
 			new Event("Chance", 35),
-			new Property("Swift", 260, 36),
+			new Property("Swift", 36, 260),
 			new Event("Community Chest", 37),
-			new Property("C#", 260, 38),
-			new Property("Obj-C", 280, 39)
+			new Property("C#", 38, 260),
+			new Property("Obj-C", 39, 280)
 		};
 	
 	//Everything in the FXML created
@@ -369,8 +362,8 @@ public class App extends Application implements Initializable {
 					}
 						
 						int totalRoll = roll1 + roll2;
-						String rollResult = String.format("%s rolled a %d!", Player.currentPlayer.getName(), totalRoll);
-						Log.setText(rollResult);
+						String rollResult = String.format("%s rolled a %d! ", Player.currentPlayer.getName(), totalRoll);
+						Log.setText(Log.getText() + rollResult);
 						/**
 						 * These lines don't work. We can't move the player for some reason.
 						 */
@@ -389,16 +382,24 @@ public class App extends Application implements Initializable {
 							System.out.println(spaces[Player.currentPlayer.position].getLayoutX());
 							System.out.println(spaces[Player.currentPlayer.position].getLayoutY());
 							System.out.println(Player.currentPlayer.position);
+							
+			
 							if(Player.currentPlayer.lastPosition > Player.currentPlayer.position) {
 									
 								Player.currentPlayer.setValue(200);
-								/** 
-								 * Code to say "pass go, collect $200
-								 */
+								String result = String.format("%s passed GO! Collect $200!", Player.currentPlayer.getName());
+								Log.setText(Log.getText() + result);
+								
+								
+				
 							}
+							
 						}
-					Player.setCurrentID();
-					Player.setCurrentPlayer();
+					
+						String result = Player.currentPlayer.doTurn(Player.currentPlayer);
+						Log.setText(Log.getText() + result);
+						Player.setCurrentID();
+						Player.setCurrentPlayer();
 					
 					
 				}

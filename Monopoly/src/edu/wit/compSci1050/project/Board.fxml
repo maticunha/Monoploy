@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wit.compSci1050.project.App">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wit.compSci1050.project.App">
    <children>
       <ImageView fitHeight="1000.0" fitWidth="1000.0" layoutX="2.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
          <image>
@@ -184,7 +184,7 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="716.0" prefWidth="387.0">
                <children>
-                  <Text fx:id="Log" layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="113.99999633431435" />
+                  <Text fx:id="Log" layoutX="5.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="376.99999633431435" />
                </children>
             </AnchorPane>
         </content>

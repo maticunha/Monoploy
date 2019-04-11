@@ -3,7 +3,7 @@ package edu.wit.compSci1050.project;
 
 //Simple method to keep track of each property
 public class Property implements Space {
-	int ownedBy;
+	int ownedBy = -1;
 	String name;
 	int position;
 	int value;
@@ -46,7 +46,7 @@ public class Property implements Space {
 
 	public int getOwnedBy() {
 		// TODO Auto-generated method stub
-		return 0;
+		return ownedBy;
 	}
 
 	@Override
