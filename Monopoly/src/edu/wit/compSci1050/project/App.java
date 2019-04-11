@@ -24,7 +24,8 @@ import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
-import javafx.scene.layout.VBox; 
+import javafx.scene.layout.VBox;
+import javafx.scene.shape.Circle; 
 
 public class App extends Application implements Initializable {
 	public static String player1_name = "Player 1";
@@ -83,7 +84,9 @@ public class App extends Application implements Initializable {
 			new Property("Obj-C", 280, 39)
 		};
 	
-	//Everything in the XFML created
+	//Everything in the FXML created
+	
+	
 	@FXML
 	public  TextField DiceResult; 
 	
@@ -100,13 +103,13 @@ public class App extends Application implements Initializable {
 	public Text Log; 
 	
 	@FXML
-	public static  ImageView Player1 = new ImageView(); 
+	public static  Circle Player1 = new Circle(); 
 	
 	@FXML
-	public static  ImageView Player2 = new ImageView(); 
+	public static  Circle Player2 = new Circle(); 
 	
 	@FXML
-	public  static  ImageView Player3 = new ImageView(); 
+	public  static  Circle Player3 = new Circle(); 
 	
 	@FXML 
 	public  static ImageView Go = new ImageView();
@@ -237,7 +240,7 @@ public class App extends Application implements Initializable {
 	};
 	
 	//Player pieces
-	public static ImageView[] pieces = {
+	public static Circle[] pieces = {
 		Player1, Player2, Player3	
 	};
 	
@@ -377,10 +380,12 @@ public class App extends Application implements Initializable {
 							if(Player.currentPlayer.getPosition()>=40) {
 								Player.currentPlayer.position=Player.currentPlayer.position % 40; 
 							}
-							pieces[Player.getCurrentID()].setX(spaces[Player.currentPlayer.position].getX());
-							pieces[Player.getCurrentID()].setY(spaces[Player.currentPlayer.position].getY());
+							pieces[Player.getCurrentID()].setLayoutX(spaces[Player.currentPlayer.position].getLayoutX());
+							pieces[Player.getCurrentID()].setLayoutY(spaces[Player.currentPlayer.position].getLayoutY());
 							Player.currentPlayer.lastPosition = Player.currentPlayer.position;
 							Player.currentPlayer.position += 1;
+							pieces[Player.getCurrentID()].setVisible(true); 
+							pieces[Player.getCurrentID()].requestFocus();  
 							System.out.println(Player.currentPlayer.position);
 							if(Player.currentPlayer.lastPosition > Player.currentPlayer.position) {
 

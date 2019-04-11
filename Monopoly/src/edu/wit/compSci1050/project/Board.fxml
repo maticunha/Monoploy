@@ -10,9 +10,10 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wit.compSci1050.project.App">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wit.compSci1050.project.App">
    <children>
       <ImageView fitHeight="1000.0" fitWidth="1000.0" layoutX="2.0" pickOnBounds="true" preserveRatio="true" rotate="-90.0">
          <image>
@@ -255,20 +256,23 @@
             <Image url="@Board%20Pictures/f04f2fae24473f8150e2dad7d9a008fd.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Player1" fitHeight="142.0" fitWidth="115.0" layoutX="140.0" layoutY="1034.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="142.0" fitWidth="115.0" layoutX="140.0" layoutY="1034.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Player%20Pictures/player1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Player2" fitHeight="105.0" fitWidth="133.0" layoutX="295.0" layoutY="1017.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="105.0" fitWidth="133.0" layoutX="295.0" layoutY="1017.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Player%20Pictures/player2.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="Player3" fitHeight="103.0" fitWidth="123.0" layoutX="482.0" layoutY="1010.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="103.0" fitWidth="123.0" layoutX="482.0" layoutY="1010.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Player%20Pictures/player3.png" />
          </image>
       </ImageView>
+      <Circle fx:id="Player1" fill="DODGERBLUE" layoutX="816.0" layoutY="1042.0" radius="42.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="Player2" fill="DODGERBLUE" layoutX="714.0" layoutY="1042.0" radius="42.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="Player3" fill="DODGERBLUE" layoutX="618.0" layoutY="1042.0" radius="42.0" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </Pane>
