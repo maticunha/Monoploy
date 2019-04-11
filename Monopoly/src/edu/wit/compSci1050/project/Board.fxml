@@ -189,7 +189,7 @@
             </AnchorPane>
         </content>
       </ScrollPane>
-      <Button fx:id="Roll" layoutX="145.0" layoutY="741.0" mnemonicParsing="false" onAction="#handle" prefHeight="86.0" prefWidth="168.0" text="Roll!" />
+      <Button fx:id="Roll" layoutX="145.0" layoutY="741.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="168.0" text="Roll!" />
       <ImageView fx:id="GoToJail" fitHeight="133.0" fitWidth="133.0" layoutX="869.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Board%20Pictures/GO_TO_JAIL.jpg" />
