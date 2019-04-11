@@ -103,13 +103,13 @@ public class App extends Application implements Initializable {
 	public Text Log; 
 	
 	@FXML
-	public static  Circle Player1 = new Circle(); 
+	public static  Circle Player1 = new Circle(816, 1042, 30); 
 	
 	@FXML
-	public static  Circle Player2 = new Circle(); 
+	public static  Circle Player2 = new Circle(714, 1042, 30); 
 	
 	@FXML
-	public  static  Circle Player3 = new Circle(); 
+	public  static  Circle Player3 = new Circle(618, 1024, 30); 
 	
 	@FXML 
 	public  static ImageView Go = new ImageView();
@@ -337,6 +337,7 @@ public class App extends Application implements Initializable {
 		final Pane p = loader.load();
 		arg0.setTitle("Monopoly Computer Science Edition");
 		arg0.setScene(new Scene(p));
+		p.getChildren().addAll(Player1, Player2, Player3); 
 		arg0.show();
 	}
 
@@ -371,7 +372,7 @@ public class App extends Application implements Initializable {
 						
 						int totalRoll = roll1 + roll2;
 						String rollResult = String.format("%s rolled a %d!", Player.currentPlayer.getName(), totalRoll);
-						
+						Log.setText(rollResult);
 						/**
 						 * These lines don't work. We can't move the player for some reason.
 						 */
@@ -379,16 +380,19 @@ public class App extends Application implements Initializable {
 						for (int i = 0; i <= totalRoll; i++) {
 							if(Player.currentPlayer.getPosition()>=40) {
 								Player.currentPlayer.position=Player.currentPlayer.position % 40; 
+								
 							}
-							pieces[Player.getCurrentID()].setLayoutX(spaces[Player.currentPlayer.position].getLayoutX());
-							pieces[Player.getCurrentID()].setLayoutY(spaces[Player.currentPlayer.position].getLayoutY());
+							pieces[Player.getCurrentID()].setCenterX(spaces[Player.currentPlayer.position].getX());
+							pieces[Player.getCurrentID()].setCenterY(spaces[Player.currentPlayer.position].getY());
 							Player.currentPlayer.lastPosition = Player.currentPlayer.position;
 							Player.currentPlayer.position += 1;
 							pieces[Player.getCurrentID()].setVisible(true); 
 							pieces[Player.getCurrentID()].requestFocus();  
+							System.out.println(spaces[Player.currentPlayer.position].getLayoutX());
+							System.out.println(spaces[Player.currentPlayer.position].getLayoutY());
 							System.out.println(Player.currentPlayer.position);
 							if(Player.currentPlayer.lastPosition > Player.currentPlayer.position) {
-
+									
 								Player.currentPlayer.setValue(200);
 								/** 
 								 * Code to say "pass go, collect $200
@@ -397,7 +401,7 @@ public class App extends Application implements Initializable {
 						}
 					Player.setCurrentID();
 					Player.setCurrentPlayer();
-					//Player.currentPlayer.doTurn(Player.currentPlayer);
+					
 					
 				}
 

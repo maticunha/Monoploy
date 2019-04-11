@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Text?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.wit.compSci1050.project.App">
@@ -190,7 +189,7 @@
             </AnchorPane>
         </content>
       </ScrollPane>
-      <Button fx:id="Roll" layoutX="145.0" layoutY="741.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="168.0" text="Roll!" />
+      <Button fx:id="Roll" layoutX="145.0" layoutY="741.0" mnemonicParsing="false" onAction="#handle" prefHeight="86.0" prefWidth="168.0" text="Roll!" />
       <ImageView fx:id="GoToJail" fitHeight="133.0" fitWidth="133.0" layoutX="869.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Board%20Pictures/GO_TO_JAIL.jpg" />
@@ -271,8 +270,5 @@
             <Image url="@Player%20Pictures/player3.png" />
          </image>
       </ImageView>
-      <Circle fx:id="Player1" fill="DODGERBLUE" layoutX="816.0" layoutY="1042.0" radius="42.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="Player2" fill="DODGERBLUE" layoutX="714.0" layoutY="1042.0" radius="42.0" stroke="BLACK" strokeType="INSIDE" />
-      <Circle fx:id="Player3" fill="DODGERBLUE" layoutX="618.0" layoutY="1042.0" radius="42.0" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </Pane>
