@@ -29,9 +29,9 @@ public class App extends Application implements Initializable {
 	
 	//All of the player created
 	public static Player[] players = {
-			new Player(player1_name, 5000, 0, 0, false),
-			new Player(player2_name, 5000, 1, 0, false),
-			new Player(player3_name, 5000, 2, 0, false),
+			new Player(player1_name, 2000, 0, 0, false),
+			new Player(player2_name, 2000, 1, 0, false),
+			new Player(player3_name, 2000, 2, 0, false),
 		};
 
 	//All the spaces created
@@ -44,7 +44,7 @@ public class App extends Application implements Initializable {
 			new Event("Chance", 5),
 			new Property("HTML5", 6, 80),
 			new Event("Income Tax", 7),
-			new Property("Java", 80, 8),
+			new Property("Java", 8, 80),
 			new Property("Scratch", 9, 90),
 			new Jail("Jail", 10),
 			new Property("Ruby", 11, 125),
@@ -94,6 +94,15 @@ public class App extends Application implements Initializable {
 	
 	@FXML
 	public Text Log; 
+	
+	@FXML
+	public Text Player1Money;
+	
+	@FXML
+	public Text Player2Money;
+	
+	@FXML
+	public Text Player3Money;
 	
 	@FXML
 	public static  Circle Player1 = new Circle(909, 902, 30); 
@@ -355,7 +364,7 @@ public class App extends Application implements Initializable {
 					else if (Player.currentPlayer.inJail) {
 
 						String result = Player.currentPlayer.doJail(Player.currentPlayer);
-						Log.setText(result + Log.getText());
+						Log.setText(String.format("%s%n%s", result, Log.getText()));
 						if(Player.currentPlayer.inJail) {
 							Player.setCurrentID();
 							Player.setCurrentPlayer();
@@ -368,13 +377,20 @@ public class App extends Application implements Initializable {
 							++Player.currentPlayer.doublesCounter;
 							
 						}
+						else {
+							Player.currentPlayer.doublesCounter = 0;
+						}
 					
 						if (Player.currentPlayer.doublesCounter == 3){
-							Log.setText("Hit your third double in a row, go to jail!" + Log.getText() );
+							Log.setText("Hit your third double in a row, go to jail!" + Log.getText());
+							Player.currentPlayer.inJail = true;
+							++Player.currentPlayer.doublesCounter;
 						}
+						
+						if (!(Player.currentPlayer.inJail)) {
 						int totalRoll = roll1 + roll2;
-						String rollResult = String.format("%s rolled a %d!%n ", Player.currentPlayer.getName(), totalRoll);
-						Log.setText(rollResult + Log.getText());
+						String rollResult = String.format("%s rolled a %d! (%d + %d)%n ", Player.currentPlayer.getName(), totalRoll, roll1, roll2);
+						
 						/**
 						 * These lines don't work. We can't move the player for some reason.
 						 */
@@ -385,8 +401,8 @@ public class App extends Application implements Initializable {
 							Player.currentPlayer.position = (Player.currentPlayer.position + 1) % 40;
 							
 							if(Player.currentPlayer.getPosition() == 0) {
-								pieces[Player.getCurrentID()].setCenterX(867.0);
-								pieces[Player.getCurrentID()].setCenterY(862.0);
+								pieces[Player.getCurrentID()].setCenterX(909.0);
+								pieces[Player.getCurrentID()].setCenterY(902.0);
 							}
 							else if (Player.currentPlayer.getPosition() > 0 && Player.currentPlayer.getPosition() < 11) {
 								pieces[Player.getCurrentID()].setCenterX(pieces[Player.getCurrentID()].getCenterX() - 79);
@@ -413,21 +429,37 @@ public class App extends Application implements Initializable {
 							if(Player.currentPlayer.lastPosition > Player.currentPlayer.position) {
 									
 								Player.currentPlayer.setValue(200);
-								String result = String.format("%s passed GO! Collect $200!", Player.currentPlayer.getName());
+								String result = String.format("%s passed GO! Collect $200!%n", Player.currentPlayer.getName());
 								Log.setText(result + Log.getText());
 								
 								
-				
 							}
-							
+							}
+						String result = Player.currentPlayer.doTurn(Player.currentPlayer);
+						Log.setText(String.format("%s %s%n%s", rollResult, result, Log.getText()));
 						}
 					
-						String result = Player.currentPlayer.doTurn(Player.currentPlayer);
-						Log.setText(result + Log.getText());
-						Player.setCurrentID();
-						Player.setCurrentPlayer();
+						
+						
+						
+
 					
 					}
+					
+					if (Player.currentPlayer.inJail) {
+						pieces[Player.getCurrentID()].setCenterX(30.0);
+						pieces[Player.getCurrentID()].setCenterY(902.0);
+						pieces[Player.getCurrentID()].setVisible(true); 
+						pieces[Player.getCurrentID()].requestFocus();
+						Player.currentPlayer.position = 10;
+					}
+					Player1Money.setText(String.format("$%d", players[0].getValue()));
+					Player2Money.setText(String.format("$%d", players[1].getValue()));
+					Player3Money.setText(String.format("$%d", players[2].getValue()));
+					
+					if (!(Player.currentPlayer.doublesCounter == 1) && !(Player.currentPlayer.doublesCounter == 2))
+					Player.setCurrentID();
+					Player.setCurrentPlayer();
 				}
 
 				

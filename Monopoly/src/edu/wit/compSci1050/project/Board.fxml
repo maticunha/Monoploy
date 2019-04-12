@@ -255,11 +255,11 @@
             <Image url="@Board%20Pictures/f04f2fae24473f8150e2dad7d9a008fd.png" />
          </image>
       </ImageView>
-      <Text fx:id="Player1_Value" layoutX="184.0" layoutY="662.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text fx:id="Player2_Value" layoutX="299.0" layoutY="662.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text fx:id="Player3_Value" layoutX="413.0" layoutY="662.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="Player1Money" layoutX="184.0" layoutY="662.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$5000" />
+      <Text fx:id="Player2Money" layoutX="299.0" layoutY="662.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$5000" />
+      <Text fx:id="Player3Money" layoutX="408.0" layoutY="661.0" strokeType="OUTSIDE" strokeWidth="0.0" text="\$5000" />
       <Circle fill="DODGERBLUE" layoutX="199.0" layoutY="620.0" radius="25.0" stroke="DODGERBLUE" strokeType="INSIDE" />
       <Circle fill="#ff451f" layoutX="313.0" layoutY="620.0" radius="25.0" stroke="#ff451f" strokeType="INSIDE" />
-      <Circle fill="#ecff1e" layoutX="424.0" layoutY="623.0" radius="25.0" stroke="#ecff1e" strokeType="INSIDE" />
+      <Circle fill="#1fff30" layoutX="424.0" layoutY="623.0" radius="25.0" stroke="#ecff1e" strokeType="INSIDE" />
    </children>
 </Pane>

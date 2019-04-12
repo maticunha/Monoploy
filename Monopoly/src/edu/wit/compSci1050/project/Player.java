@@ -22,7 +22,7 @@ public class Player implements Die, Board {
 		this.value = value;
 		this.ID = ID;
 		this.position = position;
-		inJail = false;
+		this.inJail = inJail;
 		
 	}
 	
@@ -185,6 +185,8 @@ public class Player implements Die, Board {
 						return String.format("%s is Bankrupt!", current.getName());
 						
 					}
+					
+					return String.format("%s paid %s $%d for rent at %s!", current.getName(), (App.players[owner].getName()), value/10, ((Property) App.spaceArr[position]).getName());
 				}
 				
 			}
@@ -249,7 +251,7 @@ public class Player implements Die, Board {
 				}
 				
 				else if(App.spaceArr[position].getName() == "Go To Jail") {
-					inJail = true;
+					current.inJail = true;
 					++current.jailCounter;
 					return String.format("%s is in jail!", current.getName());
 					
@@ -300,6 +302,7 @@ public class Player implements Die, Board {
 				
 			}
 			else {
+				++current.jailCounter;
 				return String.format("%s in still in jail!", current.getName());
 			}
 		}
