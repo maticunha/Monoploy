@@ -350,7 +350,12 @@ public class App extends Application implements Initializable {
 					//checks to see if player is in jail
 					else if (Player.currentPlayer.inJail) {
 
-						Player.currentPlayer.doJail();
+						String result = Player.currentPlayer.doJail(Player.currentPlayer);
+						Log.setText(result + Log.getText());
+						if(Player.currentPlayer.inJail) {
+							Player.setCurrentID();
+							Player.setCurrentPlayer();
+						}
 					}
 					else {
 						roll1 = Player.currentPlayer.rollDie();
@@ -359,24 +364,24 @@ public class App extends Application implements Initializable {
 							++Player.currentPlayer.doublesCounter;
 							
 						}
-					}
-						
+					
+						if (Player.currentPlayer.doublesCounter == 3){
+							Log.setText(Log.getText() + "Hit your third double in a row, go to jail!");
+						}
 						int totalRoll = roll1 + roll2;
-						String rollResult = String.format("%s rolled a %d! ", Player.currentPlayer.getName(), totalRoll);
-						Log.setText(Log.getText() + rollResult);
+						String rollResult = String.format("%s rolled a %d!%n ", Player.currentPlayer.getName(), totalRoll);
+						Log.setText(rollResult + Log.getText());
 						/**
 						 * These lines don't work. We can't move the player for some reason.
 						 */
-							System.out.println("ID: " + Player.currentID); 					 
+							System.out.println("ID: " + Player.currentID); 
+							
 						for (int i = 0; i <= totalRoll; i++) {
-							if(Player.currentPlayer.getPosition()>=40) {
-								Player.currentPlayer.position=Player.currentPlayer.position % 40; 
-								
-							}
+							
 							pieces[Player.getCurrentID()].setCenterX(spaces[Player.currentPlayer.position].getX());
 							pieces[Player.getCurrentID()].setCenterY(spaces[Player.currentPlayer.position].getY());
 							Player.currentPlayer.lastPosition = Player.currentPlayer.position;
-							Player.currentPlayer.position += 1;
+							Player.currentPlayer.position = (Player.currentPlayer.position + 1) % 40;
 							pieces[Player.getCurrentID()].setVisible(true); 
 							pieces[Player.getCurrentID()].requestFocus();  
 							System.out.println(spaces[Player.currentPlayer.position].getLayoutX());
@@ -388,7 +393,7 @@ public class App extends Application implements Initializable {
 									
 								Player.currentPlayer.setValue(200);
 								String result = String.format("%s passed GO! Collect $200!", Player.currentPlayer.getName());
-								Log.setText(Log.getText() + result);
+								Log.setText(result + Log.getText());
 								
 								
 				
@@ -397,11 +402,11 @@ public class App extends Application implements Initializable {
 						}
 					
 						String result = Player.currentPlayer.doTurn(Player.currentPlayer);
-						Log.setText(Log.getText() + result);
+						Log.setText(result + Log.getText());
 						Player.setCurrentID();
 						Player.setCurrentPlayer();
 					
-					
+					}
 				}
 
 				

@@ -250,6 +250,7 @@ public class Player implements Die, Board {
 				
 				else if(App.spaceArr[position].getName() == "Go To Jail") {
 					inJail = true;
+					++current.jailCounter;
 					return String.format("%s is in jail!", current.getName());
 					
 					
@@ -286,72 +287,37 @@ public class Player implements Die, Board {
 	
 	//Describes what the player will do in jail,
 	//And give the player the option to roll or pay to get out.
-	public void doJail() {
-		boolean tryRoll = false;
-		boolean pay = false;
+	public String doJail(Player current) {
+		int roll1 = rollDie();
+		int roll2 = rollDie();
 		
-		
-		/**
-		 * Insert code here to display options 
-		 * Do you want to roll?
-		 * Do you want to pay?
-		 * Buttons that do both.
-		 */
-		if (pay) {
-			setValue(-50);
+		if (current.jailCounter == 1 || current.jailCounter == 2) {
 			
-			if (this.getValue() < 0) {
-				broke = true;
-				setCurrentID();
-				setCurrentPlayer();
-				doTurn(getCurrentPlayer());
+			if(roll1 == roll2) {
+				current.inJail = false;
+				current.jailCounter = 0;
+				return String.format("%s has brkoen out of jail! Now commencing turn", current.getName());
+				
 			}
-			inJail = false;
-			doTurn(getCurrentPlayer());
+			else {
+				return String.format("%s in still in jail!", current.getName());
+			}
 		}
-		else if (tryRoll) {
-			int roll1 =  rollDie();
-			int roll2 = rollDie();
-				if (roll1 == roll2) {
-					inJail = false;
-					doTurn(getCurrentPlayer());
-					/**
-					 * Code to say "hey you got out!"
-					 */
-				}
-				else {
-					++jailCounter;
-					/**
-					 * Code to say "still in jail."
-					 */
-				}
+		else if (current.jailCounter == 3) {
+			
+			if (roll1 == roll2) {
+				current.inJail = false;
+				current.jailCounter = 0;
+				return String.format("%s has brkoen out of jail! Now commencing turn", current.getName());
+			}
+			else {
+				inJail = false;
+				current.jailCounter = 0;
+				return String.format("%s failed to break out! Pay $50 bail, then continue turn", current.getName());
+			}
 		}
-		else if (tryRoll && jailCounter == 2) {
-			int roll1 =  rollDie();
-			int roll2 = rollDie();
-				if (roll1 == roll2) {
-					inJail = false;
-					doTurn(getCurrentPlayer());
-					/**
-					 * Code to say you got out!
-					 */
-				}
-				else {
-					/**
-					 * Code to say breakout failed, pay 50 dollars and continue turn
-					 */
-					setValue(-50);
-					
-					if (this.getValue() < 0) {
-						broke = true;
-						setCurrentID();
-						setCurrentPlayer();
-						doTurn(getCurrentPlayer());
-					}
-					inJail = false;
-					doTurn(getCurrentPlayer());
-				}
-		}
+		
+		return "";
 	}
 
 
