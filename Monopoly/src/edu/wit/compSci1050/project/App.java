@@ -29,9 +29,9 @@ public class App extends Application implements Initializable {
 	
 	//All of the player created
 	public static Player[] players = {
-			new Player(App.player1_name, 5000, 0, 0, false),
-			new Player(App.player2_name, 5000, 1, 0, false),
-			new Player(App.player3_name, 5000, 2, 0, false),
+			new Player(player1_name, 5000, 0, 0, false),
+			new Player(player2_name, 5000, 1, 0, false),
+			new Player(player3_name, 5000, 2, 0, false),
 		};
 
 	//All the spaces created
@@ -372,7 +372,7 @@ public class App extends Application implements Initializable {
 						if (Player.currentPlayer.doublesCounter == 3){
 							Log.setText("Hit your third double in a row, go to jail!" + Log.getText() );
 						}
-						int totalRoll = 11;
+						int totalRoll = roll1 + roll2;
 						String rollResult = String.format("%s rolled a %d!%n ", Player.currentPlayer.getName(), totalRoll);
 						Log.setText(rollResult + Log.getText());
 						/**
