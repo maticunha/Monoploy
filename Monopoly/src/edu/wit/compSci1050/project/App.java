@@ -16,6 +16,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.shape.Circle; 
@@ -317,6 +318,9 @@ public class App extends Application implements Initializable {
 		CSharp.setY(713);
 		OBJC.setX(917); 
 		OBJC.setY(794);
+		Player1.setFill(Color.BLUE);
+		Player2.setFill(Color.RED);
+		Player3.setFill(Color.YELLOW);
 		
 		launch(args);
 		
