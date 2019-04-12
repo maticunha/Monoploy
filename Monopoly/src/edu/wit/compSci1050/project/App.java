@@ -30,8 +30,8 @@ public class App extends Application implements Initializable {
 	//All of the player created
 	public static Player[] players = {
 			new Player(App.player1_name, 5000, 0, 0, false),
-			new Player(App.player2_name, 5000, 0, 1, false),
-			new Player(App.player3_name, 5000, 0, 2, false),
+			new Player(App.player2_name, 5000, 1, 0, false),
+			new Player(App.player3_name, 5000, 2, 0, false),
 		};
 
 	//All the spaces created
@@ -96,13 +96,13 @@ public class App extends Application implements Initializable {
 	public Text Log; 
 	
 	@FXML
-	public static  Circle Player1 = new Circle(816, 1042, 30); 
+	public static  Circle Player1 = new Circle(909, 902, 30); 
 	
 	@FXML
-	public static  Circle Player2 = new Circle(714, 1042, 30); 
+	public static  Circle Player2 = new Circle(909, 902, 30); 
 	
 	@FXML
-	public  static  Circle Player3 = new Circle(618, 1024, 30); 
+	public  static  Circle Player3 = new Circle(909, 902, 30); 
 	
 	@FXML 
 	public  static ImageView Go = new ImageView();
@@ -320,7 +320,7 @@ public class App extends Application implements Initializable {
 		OBJC.setY(794);
 		Player1.setFill(Color.BLUE);
 		Player2.setFill(Color.RED);
-		Player3.setFill(Color.YELLOW);
+		Player3.setFill(Color.GREEN);
 		
 		launch(args);
 		
@@ -370,9 +370,9 @@ public class App extends Application implements Initializable {
 						}
 					
 						if (Player.currentPlayer.doublesCounter == 3){
-							Log.setText(Log.getText() + "Hit your third double in a row, go to jail!");
+							Log.setText("Hit your third double in a row, go to jail!" + Log.getText() );
 						}
-						int totalRoll = roll1 + roll2;
+						int totalRoll = 11;
 						String rollResult = String.format("%s rolled a %d!%n ", Player.currentPlayer.getName(), totalRoll);
 						Log.setText(rollResult + Log.getText());
 						/**
@@ -380,17 +380,34 @@ public class App extends Application implements Initializable {
 						 */
 							System.out.println("ID: " + Player.currentID); 
 							
-						for (int i = 0; i <= totalRoll; i++) {
-							
-							pieces[Player.getCurrentID()].setCenterX(spaces[Player.currentPlayer.position].getX());
-							pieces[Player.getCurrentID()].setCenterY(spaces[Player.currentPlayer.position].getY());
+						for (int i = 0; i < totalRoll; i++) {
 							Player.currentPlayer.lastPosition = Player.currentPlayer.position;
 							Player.currentPlayer.position = (Player.currentPlayer.position + 1) % 40;
+							
+							if(Player.currentPlayer.getPosition() == 0) {
+								pieces[Player.getCurrentID()].setCenterX(867.0);
+								pieces[Player.getCurrentID()].setCenterY(862.0);
+							}
+							else if (Player.currentPlayer.getPosition() > 0 && Player.currentPlayer.getPosition() < 11) {
+								pieces[Player.getCurrentID()].setCenterX(pieces[Player.getCurrentID()].getCenterX() - 79);
+							} 
+							else if (Player.currentPlayer.getPosition() > 10 && Player.currentPlayer.getPosition() < 21) {
+								pieces[Player.getCurrentID()].setCenterY(pieces[Player.getCurrentID()].getCenterY() - 81);
+							}
+							else if (Player.currentPlayer.getPosition() > 20 && Player.currentPlayer.getPosition() < 31) {
+								pieces[Player.getCurrentID()].setCenterX(pieces[Player.getCurrentID()].getCenterX() + 79);
+							}
+							else {
+								pieces[Player.getCurrentID()].setCenterY(pieces[Player.getCurrentID()].getCenterY() + 81);
+							}
+							
+//							pieces[Player.getCurrentID()].setCenterX(spaces[Player.currentPlayer.position].getX());
+//							pieces[Player.getCurrentID()].setCenterY(spaces[Player.currentPlayer.position].getY());
 							pieces[Player.getCurrentID()].setVisible(true); 
 							pieces[Player.getCurrentID()].requestFocus();  
-							System.out.println(spaces[Player.currentPlayer.position].getLayoutX());
-							System.out.println(spaces[Player.currentPlayer.position].getLayoutY());
-							System.out.println(Player.currentPlayer.position);
+							System.out.println(pieces[Player.getCurrentID()].getCenterX());
+							System.out.println(pieces[Player.getCurrentID()].getCenterY());
+							System.out.println();
 							
 			
 							if(Player.currentPlayer.lastPosition > Player.currentPlayer.position) {

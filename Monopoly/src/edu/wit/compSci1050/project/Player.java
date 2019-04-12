@@ -20,8 +20,8 @@ public class Player implements Die, Board {
 	Player(String name,int value, int ID, int position, boolean inJail){
 		this.name = name;
 		this.value = value;
-		this.position = position;
 		this.ID = ID;
+		this.position = position;
 		inJail = false;
 		
 	}
