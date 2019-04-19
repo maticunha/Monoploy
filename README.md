@@ -49,17 +49,8 @@ Feature #1- Built in GUI that looks just like a normal Monopoly Board.
 Feature #2- We built a log right into the center of the Board to show everything that is happening in the game. 
 Feature #3 - Real life scenarios built right into the game. These are senarious that computer science lovers will enjoy. 
 
-Demo video 
-Upload your demo video to youtube and put a link here. Basically, the video content is very much like the quick live demo you gave during your final presentation with the followings:
+Demo video: https://youtu.be/qBNU2yOLkSc
 
-Project description
-How to run the app
-Quick walkthrough of all the features of your app
-Make it short (<= 2 mins) and interesting.
-
-Here is an example of a demo video of a chat program developed by Ethan Arrowood and his team (the first 6 minutes). YOU DO NOT NEED TO SHOW HOW YOUR CODE WORKS IN THE DEMO VIDEO!!!
-
-https://www.youtube.com/watch?v=aQhh0UVLb_M
 
 Team members 
 Mati Cunha, Project Lead
