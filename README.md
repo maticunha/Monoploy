@@ -61,7 +61,7 @@ Here is an example of a demo video of a chat program developed by Ethan Arrowood
 
 https://www.youtube.com/watch?v=aQhh0UVLb_M
 
-Team members (10 pts)
+Team members 
 Mati Cunha, Project Lead
 Josh Levine, GUI Builder, Bux Fixer
 Drew Labrie, Backend Developer, Bug Fixer
