@@ -27,13 +27,17 @@ Die is an interface that controls the dice rolling and generates a random number
 
 Documentation
 Plan (10 pts)
-Week 1 (Oct 29 - Nov 5):
-Investigate current plugin solutions
-Design the user interface
-Week 2 (Nov 5 - Nov 12):
-Implement the frontend
-Design backend service
-Week 3 (Nov 12 - Nov 19): ...
+Week 1 (Mar 8 - Mar 15):
+Create Monopoly Board
+Create UML
+Week 2 (Mar 17 - Mar 23):
+Made a concrete plan
+Week 3 (Mar 24 - Mar 30):
+Finish all backend code
+Start implementing GUI
+Week 4 (Mar 31- Apr 6):
+Debugging GUI
+Fixed player movement
 Getting Started (10 pts)
 
 Install
