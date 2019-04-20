@@ -11,7 +11,7 @@ This is a game that everybody knows about and grew up playing.
 We decided to take a different twist on monopoly and make it more applicable to our time in COMP1050. 
 
 How? 
-We did this by designing different classes and methods that apply to the conecpts of Monnopoly. 
+We did this by designing different classes and methods that apply to the concepts of Monopoly. 
 These methods have different functions for things like jail, switching turns, owning properties, moving the pieces, etc. 
 
 Deliverables 
